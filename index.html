@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jai Goldberg — AI Solutions Engineer &amp; Automation Consultant</title>
-<meta name="description" content="I build LLM systems for test-prep, e-learning, and assessment companies — learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.">
+<title>Jai Goldberg, AI Solutions Engineer &amp; Automation Consultant</title>
+<meta name="description" content="I build LLM systems for test-prep, e-learning, and assessment companies: learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232E4B33'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%23FCFBF8' text-anchor='middle'%3EJG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +114,7 @@
   }
   .stat { padding: 4px 28px; border-left: 1px solid var(--hairline); }
   .stat-num { font-size: 46px; font-weight: 500; color: var(--accent); }
+  .stat-num-compact { font-size: clamp(32px, 3vw, 36px); white-space: nowrap; padding-top: 9px; }
   .stat-label { margin-top: 8px; font-size: 14px; line-height: 1.4; color: var(--muted); }
 
   section.content {
@@ -122,19 +123,10 @@
     border-top: 1px solid var(--hairline-soft);
   }
 
-  /* What I do */
-  .services-lead { margin: 14px 0 0; max-width: 560px; font-size: 16px; line-height: 1.55; color: var(--muted); }
-  .service-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
-    gap: 20px; margin-top: 36px;
-  }
   .card {
     background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 6px;
   }
   .card:hover { border-color: var(--card-border-hover); }
-  .service-card { padding: 26px 26px 28px; }
-  .service-card h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 21px; }
-  .service-card p { margin: 10px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--muted); }
 
   /* Work */
   .work-grid {
@@ -146,14 +138,6 @@
   }
   .project-card h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
   .project-card > p { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
-  .project-title-row {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 12px; flex-wrap: wrap;
-  }
-  .project-badge {
-    font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent); border: 1px solid var(--accent-border); border-radius: 999px; padding: 3px 10px;
-  }
   .metrics { display: flex; gap: 28px; margin-top: 22px; flex-wrap: wrap; }
   .metric { border-left: 1px solid var(--hairline); padding-left: 16px; }
   .metric-num { font-weight: 500; color: var(--accent); font-size: 30px; }
@@ -172,15 +156,9 @@
     white-space: nowrap;
   }
   .view-live:hover { border-bottom-color: var(--accent); color: var(--accent); }
-  .view-live-pending {
-    font-size: 14px; font-weight: 600; color: var(--faint);
-    border-bottom: 1.5px dashed #C9C6BA; padding-bottom: 1px; cursor: default;
-    white-space: nowrap;
-  }
   .project-context {
     margin: 8px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--faint);
   }
-  .project-links { display: flex; gap: 18px; flex-wrap: wrap; }
   .work-subheading {
     margin: clamp(48px, 6vw, 64px) 0 0; font-weight: 500; color: var(--ink);
     font-size: clamp(21px, 2.6vw, 25px); letter-spacing: -0.01em;
@@ -202,24 +180,27 @@
     margin: 0 0 22px; font-weight: 500; color: var(--ink);
     font-size: clamp(22px, 3vw, 28px); letter-spacing: -0.01em;
   }
+  .quiet-email { margin: 16px 0 0; }
+  .mid-cta p.quiet-email, .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
+  .quiet-email a {
+    color: var(--muted); border-bottom: 1px solid var(--hairline); padding-bottom: 1px;
+  }
+  .quiet-email a:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
   /* How I work */
-  .how-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: 28px 0; margin-top: 32px;
+  .process { list-style: none; margin: 28px 0 0; padding: 0; max-width: 760px; }
+  .process-step {
+    display: flex; gap: clamp(20px, 4vw, 36px);
+    padding: 26px 0; border-top: 1px solid var(--hairline);
   }
-  .how-item { padding: 4px 28px 4px 24px; border-left: 1px solid var(--hairline); }
-  .how-item h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
-  .how-item p { margin: 10px 0 0; max-width: 340px; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  .process-step:first-child { border-top: none; padding-top: 8px; }
+  .process-num { font-size: 32px; font-weight: 500; color: var(--accent); min-width: 34px; line-height: 1.1; }
+  .process-step h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 23px; }
+  .process-step p { margin: 8px 0 0; max-width: 560px; font-size: 15px; line-height: 1.55; color: var(--muted); }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
   .about-body p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
-  .about-tags { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
-  .about-tag {
-    font-size: 13px; color: var(--muted); border: 1px solid var(--hairline);
-    border-radius: 999px; padding: 6px 14px;
-  }
 
   /* Contact */
   .contact-head { text-align: center; }
@@ -263,7 +244,7 @@
   <img class="headshot" src="data:image/webp;base64,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" alt="Jai Goldberg" width="104" height="104">
   <div class="hero-kicker">AI Solutions Engineer &amp; Automation Consultant</div>
   <h1 class="serif">Manual work, measurably removed.</h1>
-  <p>I build LLM systems for test-prep, e-learning, and assessment companies — learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.</p>
+  <p>I build LLM systems for test-prep, e-learning, and assessment companies: learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
     <a href="#work" class="text-link">See my work</a>
@@ -273,43 +254,19 @@
 <section class="stats">
   <div class="stat">
     <div class="stat-num serif">30%</div>
-    <div class="stat-label">fewer recurring tickets — support agent for 20K+ learners</div>
+    <div class="stat-label">fewer recurring tickets, support agent for 20K+ learners</div>
   </div>
   <div class="stat">
     <div class="stat-num serif">85%</div>
-    <div class="stat-label">less production time — 18,600 psychometric feedback reports</div>
+    <div class="stat-label">less production time, 18,600 psychometric feedback reports</div>
   </div>
   <div class="stat">
     <div class="stat-num serif">25 min</div>
-    <div class="stat-label">admin saved per employee, per day — 20-person logistics team</div>
+    <div class="stat-label">admin saved per employee, per day. 20-person logistics team</div>
   </div>
   <div class="stat">
-    <div class="stat-num serif">50&cent; &rarr; 2&cent;</div>
-    <div class="stat-label">per evaluation — compliance assessment pipeline</div>
-  </div>
-</section>
-
-<section class="content">
-  <div class="eyebrow">What I do</div>
-  <h2 class="section-heading serif">Four ways I remove manual work</h2>
-  <p class="services-lead">The repetitive work goes to the software. Your team keeps the work that needs judgment.</p>
-  <div class="service-grid">
-    <div class="card service-card">
-      <h3 class="serif">Workflow automation</h3>
-      <p>Cross-system pipelines that replace manual handoffs, re-keying, and follow-ups.</p>
-    </div>
-    <div class="card service-card">
-      <h3 class="serif">AI support agents</h3>
-      <p>Virtual agents that answer recurring questions from your own knowledge base and hand off to humans with full context.</p>
-    </div>
-    <div class="card service-card">
-      <h3 class="serif">Content at scale</h3>
-      <p>LLM pipelines that turn your structured data into personalized reports and course content.</p>
-    </div>
-    <div class="card service-card">
-      <h3 class="serif">Team enablement</h3>
-      <p>Live workshops and custom AI tools that get non-technical teams using AI in their daily work.</p>
-    </div>
+    <div class="stat-num stat-num-compact serif">5+ wks &rarr; 3</div>
+    <div class="stat-label">applicant processing time, tourism operator</div>
   </div>
 </section>
 
@@ -356,14 +313,14 @@
       </div>
       <div class="project-footer-row">
         <div class="tech-tags">Claude API · Google Workspace automation · Automated QA layer</div>
-        <span class="view-live-pending" title="Awaiting live URL">View live &#8599;</span>
+        <a href="https://personalized-assessment-feedback.vercel.app/" target="_blank" rel="noopener" class="view-live">View live &#8599;</a>
       </div>
     </article>
 
     <article class="card project-card">
-      <h3 class="serif">Bastidian — Compliance Comprehension Evidence</h3>
-      <p class="project-context">Financial services. The same assessment engine, applied to a regulated market.</p>
-      <p>Scenario-based dialogue that tests genuine comprehension — not completion — and produces audit-ready evidence reports.</p>
+      <h3 class="serif">Bastidian: Compliance Comprehension Evidence</h3>
+      <p class="project-context">My own product, financial services. The same assessment engine, applied to a regulated market.</p>
+      <p>Scenario-based dialogue that tests genuine comprehension, not completion, and produces audit-ready evidence reports.</p>
       <div class="metrics">
         <div class="metric">
           <div class="metric-num serif">50&cent; &rarr; 2&cent;</div>
@@ -372,11 +329,8 @@
       </div>
       <div class="project-footer-row">
         <div class="tech-tags">LangGraph · Anthropic &amp; OpenAI APIs · Supabase · Vercel</div>
-        <div class="project-links">
-          <a href="https://bastidian.vercel.app/" target="_blank" rel="noopener" class="view-live">View live &#8599;</a>
-          <!-- TODO: bastidian-sample-report.pdf is not in the repo yet — add it at the site root so this link resolves. -->
-          <a href="/bastidian-sample-report.pdf" target="_blank" rel="noopener" class="view-live">Sample audit report &#8599;</a>
-        </div>
+        <!-- TODO: bastidian-sample-report.pdf is not in the repo yet; add it at the site root so this link resolves. -->
+        <a href="/bastidian-sample-report.pdf" target="_blank" rel="noopener" class="view-live">Sample audit report &#8599;</a>
       </div>
     </article>
 
@@ -397,7 +351,7 @@
 
     <article class="card mini-card">
       <h3 class="serif">Operations Automation &amp; AI Enablement</h3>
-      <p>Logistics company, 20-person team. LLM-powered intake, email triage, and call-transcript-to-task routing — roughly 25 minutes of admin removed per employee, per day.</p>
+      <p>Logistics company, 20-person team. LLM-powered intake, email triage, and call-transcript-to-task routing. Roughly 25 minutes of admin removed per employee, per day.</p>
       <div class="mini-footer">
         <span class="mini-metric serif">25 min saved daily</span>
         <span class="tech-tags">n8n · LLM APIs · Monday.com</span>
@@ -409,25 +363,42 @@
   <div class="mid-cta">
     <p class="serif">Sound like your backlog?</p>
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
+    <p class="quiet-email"><a href="mailto:jai@teq.biz">or email me</a></p>
   </div>
 </section>
 
 <section class="content">
   <div class="eyebrow">How I work</div>
-  <div class="how-grid">
-    <div class="how-item">
-      <h3 class="serif">Reliability</h3>
-      <p>Guardrails, fallbacks, and QA on every output. Systems that fail safely, not loudly.</p>
-    </div>
-    <div class="how-item">
-      <h3 class="serif">Security</h3>
-      <p>Your data stays in your systems. Least-privilege access by default.</p>
-    </div>
-    <div class="how-item">
-      <h3 class="serif">Ownership</h3>
-      <p>You're not paying for a build. You're paying for someone who owns it: monitored, documented, and accountable when it matters.</p>
-    </div>
-  </div>
+  <ol class="process">
+    <li class="process-step">
+      <div class="process-num serif">1</div>
+      <div>
+        <h3 class="serif">Discovery</h3>
+        <p>A short call, then a look at where your team's hours actually go. We pick the one workflow with the clearest payoff.</p>
+      </div>
+    </li>
+    <li class="process-step">
+      <div class="process-num serif">2</div>
+      <div>
+        <h3 class="serif">Scope and ROI</h3>
+        <p>Fixed scope, expected hours saved, and what it costs, before anything gets built. You decide with numbers, not a pitch.</p>
+      </div>
+    </li>
+    <li class="process-step">
+      <div class="process-num serif">3</div>
+      <div>
+        <h3 class="serif">Build with guardrails</h3>
+        <p>QA rubrics on every output, fallbacks for when things fail, least-privilege access. Your data stays in your systems.</p>
+      </div>
+    </li>
+    <li class="process-step">
+      <div class="process-num serif">4</div>
+      <div>
+        <h3 class="serif">Handover and ownership</h3>
+        <p>Documentation, monitoring, and your team trained to run it. You are not paying for a build. You are paying for someone who stays accountable.</p>
+      </div>
+    </li>
+  </ol>
 </section>
 
 <section id="about" class="content">
@@ -437,11 +408,7 @@
       <h2 class="section-heading serif">Built around how people actually work</h2>
     </div>
     <div class="about-body">
-      <p>Psychology brought me to engineering — a B.A. with a statistics focus — which is why every system I build starts with how people actually work. I work remotely with clients and teams across North America, Europe, the Middle East, and APAC. One standard applies to everything: measurably less manual work, and nothing broken along the way. I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer</a>, an open-source tool used by 100+ people weekly.</p>
-      <div class="about-tags">
-        <span class="about-tag">B.A. Psychology, Statistics focus</span>
-        <span class="about-tag">Production systems in daily use</span>
-      </div>
+      <p>I came to AI engineering from education and psychology, so I start with people: how a team actually works, where the hours go, and what a system needs to do to be trusted. Production systems fail in boring ways. Someone uploads the wrong file, an API times out, an edge case shows up on day one. I build for that path as much as the happy one: clear escalation to humans, outputs checked before they ship, nothing your team can't override. I work remotely and in person with clients across North America, Europe, the Middle East, and APAC. One standard applies to everything: measurably less manual work, and nothing broken along the way. I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer</a>, an open-source tool used by 100+ people weekly.</p>
     </div>
   </div>
 </section>
@@ -450,7 +417,8 @@
   <div class="contact-head">
     <div class="eyebrow">Contact</div>
     <h2 class="serif">Book an intro call</h2>
-    <p>Thirty minutes to map where automation would pay off in your operation. No prep needed.</p>
+    <p>Fifteen minutes to map where automation would pay off in your operation. No prep needed.</p>
+    <p class="quiet-email">Prefer email? <a href="mailto:jai@teq.biz">Write to jai@teq.biz</a></p>
   </div>
 
   <div class="calendly-embed">
@@ -470,7 +438,7 @@
   </div>
 </section>
 
-<footer>&copy; 2026 Jai Goldberg — AI solutions engineering &amp; automation consulting</footer>
+<footer>&copy; 2026 Jai Goldberg, AI solutions engineering &amp; automation consulting</footer>
 
 </body>
 </html>
