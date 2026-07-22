@@ -81,14 +81,16 @@ The consulting sources cluster your eight individual projects into **six strateg
 
 ## Master Technical Stack
 
-The full toolset across all workflows, grouped by function. Use the developer-architecture layer only when pitching technical buyers or platform teams.
+The toolset behind my delivered work, plus the production-grade architecture I build toward when a project is scoped to scale.
 
-*   **Core Orchestration & Scripting:** n8n, Make, Google Apps Script, Python + FastAPI
-*   **Large Language Models:** Claude, GPT, Gemini
-*   **Content & Voice Generation:** ElevenLabs, NotebookLM, Synthesia/HeyGen
-*   **Front-End Support & Delivery:** Intercom, Zendesk, Canvas/Moodle APIs, Google Workspace
-*   **Vector Databases (RAG-based tools):** Pinecone, Weaviate, pgvector
+**Deployed in client and product work:**
+*   **Automation & Integration:** n8n, Zapier, Google Apps Script, Python, JavaScript, FastAPI, REST APIs, webhooks
+*   **AI & Retrieval:** Claude, GPT, Gemini (incl. multi-agent evaluation architectures), Serper, You.com
+*   **Content, Voice & LMS:** ElevenLabs, Synthesia/HeyGen, NotebookLM, Canva, LearnDash, Articulate 360, Moodle
+*   **Support, Data & Deployment:** Intercom, Zendesk, Google Workspace, Postgres/Supabase, relational + vector databases, Vercel
 
+**Production architecture (for scale-focused builds):**
+*   LangChain, LangGraph, Pinecone/Weaviate/pgvector, Ragas, React/HTML/CSS review dashboards
 ---
 
 ## 3. Targeted Use Cases & Workflows by Market
