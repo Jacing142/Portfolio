@@ -79,6 +79,18 @@ The consulting sources cluster your eight individual projects into **six strateg
 
 ---
 
+## Master Technical Stack
+
+The full toolset across all workflows, grouped by function. Use the developer-architecture layer only when pitching technical buyers or platform teams.
+
+*   **Core Orchestration & Scripting:** n8n, Make, Google Apps Script, Python + FastAPI
+*   **Large Language Models:** Claude, GPT, Gemini
+*   **Content & Voice Generation:** ElevenLabs, NotebookLM, Synthesia/HeyGen
+*   **Front-End Support & Delivery:** Intercom, Zendesk, Canvas/Moodle APIs, Google Workspace
+*   **Vector Databases (RAG-based tools):** Pinecone, Weaviate, pgvector
+
+---
+
 ## 3. Targeted Use Cases & Workflows by Market
 
 To maximize sales success, you must pivot your technical solutions to address the starkly different pain points of your two primary audiences: **In-Person Schools** and **Online E-Learning/EdTech Businesses** [6, 21].
@@ -96,6 +108,8 @@ To maximize sales success, you must pivot your technical solutions to address th
 | **Parent/Family Communication Drafting** [16, 39] | LLM synthesizes classroom progress data to draft personalized progress reports or conference summaries for teacher editing [16, 39]. | Reclaims planning days. Replaces hours of manual writing for dozens of students with instant drafted options [15, 16]. |
 | **Attendance & Chronic Absence Nudges** [3, 24] | School Information System (SIS) drops trigger n8n workflows that text/email parents immediately when thresholds slip [3, 24]. | **10% to 15% drop** in chronic absenteeism, preserving local funding tied to student attendance [3]. |
 | **Admin Email Triage & Policy Chatbots** [10, 40] | Intercom / Zendesk AI instances ingest official policy documents (e.g., bullying, safety, IEP rules) [10, 40]. | Resolves **60% to 80%** of routine front-office questions [4]; reduces admin response lag [10, 46]. |
+| **Report Card & Narrative Report Drafting** | LLM synthesizes quantitative grades and behavioral metrics into narrative report-card drafts for teacher editing. | Replaces hours of manual narrative writing per class with instant, editable drafts. |
+| **Timetable & Substitution Assistant** | n8n/Apps Script reads teacher-absence data and auto-proposes timetable adjustments and cover assignments. | Removes manual daily scheduling churn for admin staff; faster absence coverage. |
 
 ---
 
@@ -110,6 +124,8 @@ To maximize sales success, you must pivot your technical solutions to address th
 | **"Oral Assessment" Comprehension Checks** [5, 20] | Bastidian voice/text conversational agent conducts mastery checks before certificates are released [20, 23]. | Prevents AI cheating; **25% increase in certification pass rates** and proof of actual competency [5, 20]. |
 | **Persistent Context Onboarding Bot** [20] | Custom chatbot connected to FAQ database. **Crucial Edge:** Must have persistent user memory (only 5% of enterprise tools do) [20]. | **Resolves 60%–80% of routine student questions** instantly [4]; reduces onboarding dropouts [20]. |
 | **Course Localization & Translation** [44] | Automated script translation combined with ElevenLabs multi-lingual cloned voices [44]. | Drastically slashes cost of manual translators, accelerating global platform launches [44, 46]. |
+| **Regulatory Content Auditing** | LLM audits course libraries when regulations change, recommends inline updates, and flags edits for SME approval. | Keeps compliance-heavy course catalogs current without full manual re-review; reduces audit labor. |
+| **Discussion Forum Moderation** | LLM summarizes course forums, surfaces unaddressed questions, and drafts suggested instructor responses. | Cuts instructor moderation load; ensures learner questions don't go unanswered. |
 
 ---
 
