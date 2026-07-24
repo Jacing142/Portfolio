@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jai Goldberg, AI Solutions Engineer &amp; Automation Consultant</title>
-<meta name="description" content="I build LLM systems for test-prep, e-learning, and assessment companies: learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.">
+<title>Jai Goldberg | AI &amp; Automation Solutions for Education</title>
+<meta name="description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jais-portfolio-site.vercel.app/">
+<meta property="og:title" content="Jai Goldberg | AI &amp; Automation Solutions for Education">
+<meta property="og:description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<meta property="og:image" content="images/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jai Goldberg | AI &amp; Automation Solutions for Education">
+<meta name="twitter:description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<meta name="twitter:image" content="images/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232E4B33'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%23FCFBF8' text-anchor='middle'%3EJG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +68,7 @@
   }
   .nav-name { font-family: 'Newsreader', Georgia, serif; font-size: 19px; font-weight: 600; color: var(--ink); }
   .nav-name:hover { color: var(--ink); }
-  .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); }
+  .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(16px, 3vw, 32px); }
   .nav-link { font-size: 14px; color: var(--muted); }
   .nav-link:hover { color: var(--ink); }
 
@@ -106,16 +115,14 @@
     flex-wrap: wrap; justify-content: center;
   }
 
-  /* Stat strip */
-  .stats {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 28px 0; max-width: 1120px; margin: 0 auto;
-    padding: 16px clamp(20px, 5vw, 56px) clamp(56px, 8vw, 88px);
+  /* Hero proof line */
+  .hero-proof {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center;
+    gap: 6px 12px; margin-top: 40px;
+    font-size: 14px; line-height: 1.4; color: var(--muted);
   }
-  .stat { padding: 4px 28px; border-left: 1px solid var(--hairline); }
-  .stat-num { font-size: 46px; font-weight: 500; color: var(--accent); }
-  .stat-num-compact { font-size: clamp(32px, 3vw, 36px); white-space: nowrap; padding-top: 9px; }
-  .stat-label { margin-top: 8px; font-size: 14px; line-height: 1.4; color: var(--muted); }
+  .proof-num { font-weight: 600; color: var(--ink-soft); }
+  .proof-sep { color: var(--faint); }
 
   section.content {
     max-width: 1120px; margin: 0 auto;
@@ -128,60 +135,97 @@
   }
   .card:hover { border-color: var(--card-border-hover); }
 
+  /* Framework */
+  .framework-grid {
+    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: clamp(36px, 5vw, 64px);
+  }
+  .framework-lede {
+    margin: 18px 0 0; max-width: 560px;
+    font-size: 16px; line-height: 1.55; color: var(--muted);
+  }
+  #loop-diagram {
+    width: 100%; aspect-ratio: 4 / 3; margin-top: 28px;
+    border: 1px dashed var(--hairline);
+  }
+  .loop-attribution {
+    margin: 14px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .framework-grid { grid-template-columns: 1fr; }
+  }
+
   /* Work */
-  .work-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-    gap: 20px; margin-top: 36px;
+  .work-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .work-tab {
+    font-family: inherit; font-size: 14px; font-weight: 600; color: var(--muted);
+    background: none; border: 0; border-radius: 999px;
+    padding: 9px 18px; cursor: pointer;
   }
-  .project-card {
-    display: flex; flex-direction: column; padding: 30px;
+  .work-tab:hover { color: var(--ink); }
+  .work-tab[aria-selected="true"] { background: var(--ink); color: #FFFFFF; }
+  @media (max-width: 720px) {
+    .work-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .work-tab { padding: 9px 6px; text-align: center; }
   }
-  .project-card h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
-  .project-card > p { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
-  .metrics { display: flex; gap: 28px; margin-top: 22px; flex-wrap: wrap; }
-  .metric { border-left: 1px solid var(--hairline); padding-left: 16px; }
-  .metric-num { font-weight: 500; color: var(--accent); font-size: 30px; }
-  .metric-label { margin-top: 2px; font-size: 13px; color: var(--muted); }
-  .project-footer {
-    margin-top: auto; padding-top: 20px; font-size: 12.5px; color: var(--faint);
-  }
-  .project-footer-row {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 12px; margin-top: auto; padding-top: 20px;
-  }
-  .tech-tags { font-size: 12.5px; color: var(--faint); }
-  .view-live {
-    font-size: 14px; font-weight: 600; color: var(--accent);
-    border-bottom: 1.5px solid var(--accent-border); padding-bottom: 1px;
-    white-space: nowrap;
-  }
-  .view-live:hover { border-bottom-color: var(--accent); color: var(--accent); }
-  .project-context {
-    margin: 8px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--faint);
-  }
-  .work-subheading {
-    margin: clamp(48px, 6vw, 64px) 0 0; font-weight: 500; color: var(--ink);
-    font-size: clamp(21px, 2.6vw, 25px); letter-spacing: -0.01em;
-  }
-  .mini-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  .node-panel { display: none; margin-top: 32px; }
+  .node-panel.is-active { display: block; }
+  .node-name { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
+  .node-def { margin: 6px 0 0; font-size: 15px; font-style: italic; color: var(--muted); }
+  .panel-cards {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
     gap: 20px; margin-top: 24px;
   }
-  .mini-card { padding: 22px 24px; }
-  .mini-card h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 19px; }
-  .mini-card p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--muted); }
-  .mini-footer {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 12px; flex-wrap: wrap; margin-top: 16px;
+  .case-card {
+    display: flex; flex-direction: column; padding: 30px;
   }
-  .mini-metric { font-size: 17px; font-weight: 500; color: var(--accent); }
-  .mid-cta { text-align: center; margin-top: clamp(56px, 8vw, 72px); }
-  .mid-cta p {
-    margin: 0 0 22px; font-weight: 500; color: var(--ink);
-    font-size: clamp(22px, 3vw, 28px); letter-spacing: -0.01em;
+  .case-kicker {
+    margin-bottom: 8px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
   }
+  .case-card h4 { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
+  .case-note { margin: 6px 0 0; font-size: 15px; font-style: italic; color: var(--muted); }
+  .case-fields { margin: 20px 0 0; }
+  .case-field + .case-field { margin-top: 14px; }
+  .case-field dt {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .case-field dd { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+
+  /* Guardrails */
+  .guardrails-intro { margin-top: 22px; }
+  .guardrails-intro p {
+    margin: 0; max-width: 60ch;
+    font-size: 16px; line-height: 1.6; color: var(--muted);
+  }
+  .guardrails-intro p + p { margin-top: 14px; }
+  .guardrails-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: 40px; row-gap: 28px; margin-top: clamp(40px, 6vw, 56px);
+  }
+  .guard-item { border-top: 1px solid var(--hairline-soft); padding-top: 18px; }
+  .guard-item h3 { margin: 0; font-weight: 500; font-size: 18px; color: var(--ink); }
+  .guard-item p { margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  .guard-item-wide { grid-column: 1 / -1; margin-top: 28px; }
+  @media (max-width: 720px) {
+    .guardrails-grid { grid-template-columns: 1fr; }
+  }
+  .guard-eval { margin-top: clamp(48px, 7vw, 64px); }
+  .guard-subhead {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .guard-eval .guard-item { margin-top: 20px; }
+  .tech-strip {
+    margin-top: clamp(48px, 7vw, 64px); padding-top: 30px;
+    border-top: 1px solid var(--hairline);
+  }
+  .tech-line { margin: 0; font-size: 13px; line-height: 1.8; color: var(--faint); }
+  .tech-cat { font-size: 12px; color: var(--muted); }
+
   .quiet-email { margin: 16px 0 0; }
-  .mid-cta p.quiet-email, .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
+  .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
   .quiet-email a {
     color: var(--muted); border-bottom: 1px solid var(--hairline); padding-bottom: 1px;
   }
@@ -209,7 +253,7 @@
   .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
   .about-portrait {
     margin-top: 28px; width: min(100%, 300px); height: auto;
-    aspect-ratio: 4 / 5; object-fit: cover;
+    aspect-ratio: 4 / 3; object-fit: cover;
     border: 1px solid var(--card-border); border-radius: 6px;
   }
   .about-body p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
@@ -218,15 +262,23 @@
     font-weight: 600; border-bottom: 1.5px solid var(--accent-border); padding-bottom: 1px;
   }
   .about-body a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .about-body p.about-aside { margin-top: 28px; font-size: 14.5px; color: var(--muted); }
 
   /* Contact */
   .contact-head { text-align: center; }
   .contact-head h2 { font-size: clamp(30px, 4.5vw, 42px); }
   .contact-head p { margin: 16px auto 0; max-width: 520px; font-size: 16px; line-height: 1.55; color: var(--muted); }
-  .calendly-embed { max-width: 780px; margin: 36px auto 0; }
-  .calendly-embed iframe { width: 100%; height: 700px; border: none; border-radius: 6px; }
+  .calendly-embed {
+    min-height: 780px;
+    overflow: hidden;
+  }
+  .calendly-embed iframe {
+    width: 100%;
+    height: 780px;
+    border: 0;
+  }
   @media (max-width: 640px) {
-    .calendly-embed iframe { height: 880px; }
+    .calendly-embed, .calendly-embed iframe { height: 1000px; min-height: 1000px; }
   }
   .contact-actions {
     display: flex; align-items: center; justify-content: center; gap: 24px;
@@ -245,18 +297,16 @@
     text-align: center; font-size: 13px; color: var(--faint);
   }
 </style>
-<!-- Mixpanel: anonymous pageview tracking (client-side, US data residency) -->
-<script type="text/javascript">
-(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
-mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
-</script>
 </head>
 <body>
 
 <nav class="nav">
   <a href="#top" class="nav-name">Jai Goldberg</a>
   <div class="nav-links">
+    <a href="#top" class="nav-link">Home</a>
+    <a href="#framework" class="nav-link">Framework</a>
     <a href="#work" class="nav-link">Work</a>
+    <a href="#guardrails" class="nav-link">Guardrails</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#contact" class="nav-link">Contact</a>
     <a href="#contact" class="btn-dark nav-cta">Book a call</a>
@@ -265,201 +315,428 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
 <header id="top" class="hero">
   <img class="headshot" src="data:image/webp;base64,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" alt="Jai Goldberg" width="104" height="104">
-  <div class="hero-kicker">AI Solutions Engineer &amp; Automation Consultant</div>
+  <div class="hero-kicker">AI &amp; Automation Solutions for Education</div>
   <h1 class="serif">Manual work, measurably removed.</h1>
-  <p>I build LLM systems for test-prep, e-learning, and assessment companies: learner support, personalized feedback, and content workflows judged on hours saved and tickets deflected, not demos.</p>
+  <p>Education organisations run on a lot of manual work. I find where it is, build the systems and automation that remove it, and get teams using AI in their day-to-day work.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
-    <a href="#work" class="text-link">See my work</a>
+    <a href="#framework" class="text-link">See my work</a>
+  </div>
+  <div class="hero-proof">
+    <span><span class="proof-num">20K+</span> learners supported</span>
+    <span class="proof-sep" aria-hidden="true">·</span>
+    <span><span class="proof-num">18,600</span> reports generated</span>
+    <span class="proof-sep" aria-hidden="true">·</span>
+    <span><span class="proof-num">40%</span> less course production time</span>
+    <span class="proof-sep" aria-hidden="true">·</span>
+    <span><span class="proof-num">100+</span> staff trained</span>
   </div>
 </header>
 
-<section class="stats">
-  <div class="stat">
-    <div class="stat-num serif">30%</div>
-    <div class="stat-label">fewer recurring tickets, support agent for 20K+ learners</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num serif">85%</div>
-    <div class="stat-label">less production time, 18,600 psychometric feedback reports</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num serif">25 min</div>
-    <div class="stat-label">admin saved per employee, per day. 20-person logistics team</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num stat-num-compact serif">5+ wks &rarr; 3</div>
-    <div class="stat-label">applicant processing time, tourism operator</div>
+<section id="framework" class="content">
+  <div class="framework-grid">
+    <div>
+      <div class="eyebrow">FRAMEWORK</div>
+      <h2 class="section-heading serif">The Education Operations Loop</h2>
+      <p class="framework-lede">Six functions every education organisation runs on. This is where AI delivers the most value.</p>
+      <!-- LOOP DIAGRAM: intentionally omitted. Preserve the placeholder exactly. Do not design or approximate the diagram in this pass. -->
+      <div id="loop-diagram" role="img" aria-label="The Education Operations Loop: Create, Deliver, Assess, Operate, Enable, Improve"></div>
+      <p class="loop-attribution">I worked inside this loop before I automated any part of it. Years in instructional design, building courses and assessments across everything from nursing to engineering.</p>
+    </div>
+    <div>
+      <div class="eyebrow">How I work</div>
+      <ol class="process">
+        <li class="process-step">
+          <div class="process-num serif">1</div>
+          <div>
+            <h3 class="serif">Discovery</h3>
+            <p>A short call, then a look at where your team's hours actually go. We pick the one workflow with the clearest payoff.</p>
+          </div>
+          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </li>
+        <li class="process-step">
+          <div class="process-num serif">2</div>
+          <div>
+            <h3 class="serif">Scope and ROI</h3>
+            <p>Fixed scope, expected hours saved, and what it costs, before anything gets built. You decide with numbers, not a pitch.</p>
+          </div>
+          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        </li>
+        <li class="process-step">
+          <div class="process-num serif">3</div>
+          <div>
+            <h3 class="serif">Build with guardrails</h3>
+            <p>QA rubrics on every output, fallbacks for when things fail, least-privilege access. Your data stays in your systems.</p>
+          </div>
+          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        </li>
+        <li class="process-step">
+          <div class="process-num serif">4</div>
+          <div>
+            <h3 class="serif">Handover and ownership</h3>
+            <p>Documentation, monitoring, and your team trained to run it. You are not paying for a build. You are paying for someone who stays accountable.</p>
+          </div>
+          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
 <section id="work" class="content">
-  <div class="eyebrow">Work</div>
-  <h2 class="section-heading serif">Selected projects</h2>
+  <div class="eyebrow">CASE STUDIES</div>
+  <h2 class="section-heading serif">What this looks like in practice</h2>
 
-  <div class="work-grid">
-
-    <article class="card project-card">
-      <h3 class="serif">Learner Support Virtual Agent</h3>
-      <p class="project-context">For a test-prep platform serving 20K+ learners.</p>
-      <p>Support agent that answers learner questions from the course knowledge base and escalates to humans with full context.</p>
-      <div class="metrics">
-        <div class="metric">
-          <div class="metric-num serif">30%</div>
-          <div class="metric-label">fewer recurring tickets</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num serif">4.8/5</div>
-          <div class="metric-label">CSAT maintained</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num serif">20K+</div>
-          <div class="metric-label">learners covered</div>
-        </div>
-      </div>
-      <div class="project-footer">OpenAI API · RAG pipeline · Intent classification · LMS integration</div>
-    </article>
-
-    <article class="card project-card">
-      <h3 class="serif">Personalized Assessment Feedback Engine</h3>
-      <p class="project-context">For a psychometric test-prep provider.</p>
-      <p>LLM pipeline turning psychometric scores into narrative feedback, with rubric-based QA on every report.</p>
-      <div class="metrics">
-        <div class="metric">
-          <div class="metric-num serif">18,600</div>
-          <div class="metric-label">reports generated</div>
-        </div>
-        <div class="metric">
-          <div class="metric-num serif">85%</div>
-          <div class="metric-label">less production time per entry</div>
-        </div>
-      </div>
-      <div class="project-footer-row">
-        <div class="tech-tags">Claude API · Google Workspace automation · Automated QA layer</div>
-        <a href="https://personalized-assessment-feedback.vercel.app/" target="_blank" rel="noopener" class="view-live">See how it works &#8599;</a>
-      </div>
-    </article>
-
-    <article class="card project-card">
-      <h3 class="serif">AI Course Production Workflow</h3>
-      <p class="project-context">For a test-prep e-learning provider.</p>
-      <p>Agentic workflow that turns subject-matter-expert input and existing course material into outlines, then, after human review, drafts video scripts, visual suggestions, and assessment questions.</p>
-      <div class="metrics">
-        <div class="metric">
-          <div class="metric-num serif">40%</div>
-          <div class="metric-label">less course production time</div>
-        </div>
-      </div>
-      <div class="project-footer">Google Apps Script · LLM APIs · n8n</div>
-    </article>
-
-    <article class="card project-card">
-      <h3 class="serif">Bastidian: Compliance Comprehension Evidence</h3>
-      <p class="project-context">My own product, financial services. The same assessment engine, applied to a regulated market.</p>
-      <p>Scenario-based dialogue that tests genuine comprehension, not completion, and produces audit-ready evidence reports.</p>
-      <div class="metrics">
-        <div class="metric">
-          <div class="metric-num serif">50&cent; &rarr; 2&cent;</div>
-          <div class="metric-label">per evaluation</div>
-        </div>
-      </div>
-      <div class="project-footer-row">
-        <div class="tech-tags">LangGraph · Anthropic &amp; OpenAI APIs · Supabase · Vercel</div>
-        <a href="https://bastidian.vercel.app/" target="_blank" rel="noopener" class="view-live">See sample output &#8599;</a>
-      </div>
-    </article>
-
+  <div class="work-tabs" role="tablist">
+    <button type="button" class="work-tab" id="tab-create" role="tab" aria-selected="true" aria-controls="create">Create</button>
+    <button type="button" class="work-tab" id="tab-deliver" role="tab" aria-selected="false" aria-controls="deliver" tabindex="-1">Deliver</button>
+    <button type="button" class="work-tab" id="tab-assess" role="tab" aria-selected="false" aria-controls="assess" tabindex="-1">Assess</button>
+    <button type="button" class="work-tab" id="tab-operate" role="tab" aria-selected="false" aria-controls="operate" tabindex="-1">Operate</button>
+    <button type="button" class="work-tab" id="tab-enable" role="tab" aria-selected="false" aria-controls="enable" tabindex="-1">Enable</button>
+    <button type="button" class="work-tab" id="tab-improve" role="tab" aria-selected="false" aria-controls="improve" tabindex="-1">Improve</button>
   </div>
 
-  <h3 class="work-subheading serif">Same systems, other industries</h3>
-
-  <div class="mini-grid">
-
-    <article class="card mini-card">
-      <h3 class="serif">Applicant Completion Automation</h3>
-      <p>Tourism operator. Personalized nudging across CRM and email cut applicant processing from 5+ weeks to 3.</p>
-      <div class="mini-footer">
-        <span class="mini-metric serif">5+ weeks &rarr; 3</span>
-        <span class="tech-tags">Salesforce · Gmail API · Twilio · WhatsApp Business API · n8n</span>
-      </div>
-    </article>
-
-    <article class="card mini-card">
-      <h3 class="serif">Operations Automation &amp; AI Enablement</h3>
-      <p>Logistics company, 20-person team. LLM-powered intake, email triage, and call-transcript-to-task routing. Roughly 25 minutes of admin removed per employee, per day.</p>
-      <div class="mini-footer">
-        <span class="mini-metric serif">25 min saved daily</span>
-        <span class="tech-tags">Gmail API · n8n · LLM APIs · Monday.com · Linear</span>
-      </div>
-    </article>
-
-    <article class="card mini-card">
-      <h3 class="serif">AI Workshops for Non-Technical Teams</h3>
-      <p>Hands-on sessions that take teams from prompt basics to running their own automations on real work, with the workflows built during the session left behind as working tools.</p>
-      <div class="mini-footer">
-        <span class="mini-metric serif">90% daily adoption · 100+ trained</span>
-        <span class="tech-tags">GPT · Claude · Google Workspace · Canva</span>
-      </div>
-    </article>
-
+  <div id="create" class="node-panel is-active" role="tabpanel" aria-labelledby="tab-create">
+    <h3 class="node-name serif">Create</h3>
+    <p class="node-def">Producing the material people learn from.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <h4 class="serif">AI Course Production Workflow</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Turning subject-matter-expert input into finished course material was slow and almost entirely manual, and the bottleneck was the same every time.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A multi-step workflow that structures raw expert input and existing material into course outlines. Once a human approves the outline, it drafts video scripts, visual suggestions and assessment questions.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>40% less course production time.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Content and instructional design teams.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Workflow design · Prompt architecture · Automation · Deployment</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Google Apps Script · LLM APIs · n8n</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
   </div>
 
-  <div class="mid-cta">
-    <p class="serif">Sound like your backlog?</p>
-    <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
-    <p class="quiet-email"><a href="mailto:jai@teq.biz">or email me</a></p>
+  <div id="deliver" class="node-panel" role="tabpanel" aria-labelledby="tab-deliver">
+    <h3 class="node-name serif">Deliver</h3>
+    <p class="node-def">Getting learners through it, and answering them along the way.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <h4 class="serif">Learner Support Virtual Agent</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Learners kept asking the same questions and every one landed on a human. Support volume grew with the learner base instead of flattening.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>An assistant that answers routine questions from the course knowledge base, and escalates anything it isn't confident about to a person with the full conversation attached.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>30% fewer recurring tickets, 4.8/5 satisfaction maintained.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>20K+ learners, and the support team behind them.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Retrieval design · Intent classification · Escalation logic · Integration</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>OpenAI API · RAG pipeline · LMS integration</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="card case-card">
+        <h4 class="serif">Applicant Completion Automation</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>People started the application and stalled partway through. Chasing them was manual and inconsistent, and the process dragged past five weeks.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>Personalised nudges triggered by exactly where someone stopped, sent across CRM, email and messaging, each one reflecting the step they are stuck on.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Processing time cut from 5+ weeks to 3.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Applicants mid-process, and the team chasing them.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Workflow design · Cross-system integration · Automation</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Salesforce · Gmail API · Twilio · WhatsApp Business API · n8n</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="assess" class="node-panel" role="tabpanel" aria-labelledby="tab-assess">
+    <h3 class="node-name serif">Assess</h3>
+    <p class="node-def">Finding out what learners actually understood.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <h4 class="serif">Personalised Assessment Feedback Engine</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Every report was written by hand from the scores. Volume was capped by how fast people could write, and quality drifted between authors.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A pipeline that turns raw psychometric scores into narrative feedback, with a rubric checking every report before it ships. Anything that fails the rubric goes to a person rather than out the door.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>18,600 reports generated, 85% less production time per report.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Assessment takers, and the team producing their reports.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Pipeline architecture · Rubric design · QA automation</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Claude API · Google Workspace automation · Automated QA layer</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="card case-card">
+        <h4 class="serif">Bastidian</h4>
+        <p class="case-note">My own product, MVP</p>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Completion is easy to record and tells you almost nothing. An organisation can prove someone clicked through a course. It cannot prove anyone understood it.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A conversational assessment designed to test understanding rather than completion, using the protégé effect: the assistant deliberately gets something wrong, and the learner has to catch it and explain why. The output is an auditable record of the exchange, intended as evidence of what was and was not understood.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>MVP. 2c per evaluation. Walkthrough available on request.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>In development.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Product · Multi-agent architecture · Scoring design · Deployment</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>LangGraph · Anthropic &amp; OpenAI APIs · Supabase · Vercel</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="operate" class="node-panel" role="tabpanel" aria-labelledby="tab-operate">
+    <h3 class="node-name serif">Operate</h3>
+    <p class="node-def">The administrative work that keeps everything else running.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <h4 class="serif">Operations Automation</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Work arrived by email, phone and call transcript, and someone had to read all of it before anything could be assigned. Twenty people were each losing part of every day to sorting rather than doing.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>An intake layer that reads incoming work, classifies it and routes it to the right person and system. Ambiguous items get flagged rather than guessed at.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Roughly 25 minutes of admin removed per person, per day.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>A 20-person operations team.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Intake design · Classification · Routing logic · Monitoring</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Gmail API · n8n · LLM APIs · Monday.com · Linear</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="enable" class="node-panel" role="tabpanel" aria-labelledby="tab-enable">
+    <h3 class="node-name serif">Enable</h3>
+    <p class="node-def">Making sure staff can actually use the tools they are given.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <h4 class="serif">AI Workshops</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Teams get given AI tools and no real idea what to do with them. Adoption stalls after the first week because nothing connects to the work people actually have in front of them.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>Hands-on sessions built around the team's real workflows, taking people from prompt basics to running their own automations. Whatever gets built during the session stays with them as a working tool.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>100+ people trained, 90% still using it daily.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Non-technical teams.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Curriculum design · Facilitation · Workflow build</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>GPT · Claude · Google Workspace · Canva</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="improve" class="node-panel" role="tabpanel" aria-labelledby="tab-improve">
+    <h3 class="node-name serif">Improve</h3>
+    <p class="node-def">Learning from what the data shows, and feeding it back into the material.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <div class="case-kicker">Capability</div>
+        <h4 class="serif">Post-publish analytics</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>The gap</dt>
+            <dd>Most organisations publish a course and stop looking. The data that shows where learners give up, which explanations fail and which changes actually work is already being collected and rarely used.</dd>
+          </div>
+          <div class="case-field">
+            <dt>What I do</dt>
+            <dd>Behavioural analysis of xAPI and LMS events to locate drop-off and friction, then targeted changes to the material and the interventions around it, measured against the same data.</dd>
+          </div>
+          <div class="case-field">
+            <dt>In-house implementation</dt>
+            <dd>Course completion raised from 16% to 42% on the lowest-performing courses, and post-assessment scores from 68% to 84%.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>xAPI · GA4 · LMS event data</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="content">
-  <div class="eyebrow">How I work</div>
-  <ol class="process">
-    <li class="process-step">
-      <div class="process-num serif">1</div>
-      <div>
-        <h3 class="serif">Discovery</h3>
-        <p>A short call, then a look at where your team's hours actually go. We pick the one workflow with the clearest payoff.</p>
-      </div>
-      <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    </li>
-    <li class="process-step">
-      <div class="process-num serif">2</div>
-      <div>
-        <h3 class="serif">Scope and ROI</h3>
-        <p>Fixed scope, expected hours saved, and what it costs, before anything gets built. You decide with numbers, not a pitch.</p>
-      </div>
-      <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-    </li>
-    <li class="process-step">
-      <div class="process-num serif">3</div>
-      <div>
-        <h3 class="serif">Build with guardrails</h3>
-        <p>QA rubrics on every output, fallbacks for when things fail, least-privilege access. Your data stays in your systems.</p>
-      </div>
-      <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-    </li>
-    <li class="process-step">
-      <div class="process-num serif">4</div>
-      <div>
-        <h3 class="serif">Handover and ownership</h3>
-        <p>Documentation, monitoring, and your team trained to run it. You are not paying for a build. You are paying for someone who stays accountable.</p>
-      </div>
-      <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
-    </li>
-  </ol>
+<section id="guardrails" class="content">
+  <div class="eyebrow">GUARDRAILS</div>
+  <h2 class="section-heading serif">Production systems fail in boring ways</h2>
+
+  <div class="guardrails-intro">
+    <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
+    <p>The goal isn't to take people out of the process. It's to take out the repetitive work while keeping the decisions that matter visible and reviewable.</p>
+  </div>
+
+  <div class="guardrails-grid">
+    <div class="guard-item">
+      <h3 class="serif">When the model is confident and wrong</h3>
+      <p>Outputs are scored against defined checks before release. Below a threshold, nothing ships. It goes to a person with the full context attached, not a bare flag saying something needs checking.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">When the output isn't good enough</h3>
+      <p>Generated work has to meet defined quality criteria before release. Anything that falls short goes to review rather than out the door.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">When the input is wrong</h3>
+      <p>Validation at intake catches bad or ambiguous input before it enters the workflow.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">When something breaks</h3>
+      <p>Retries and fallbacks keep work moving where possible. Silent failure is the worst outcome, so failed runs are surfaced rather than swallowed.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">When the data is sensitive</h3>
+      <p>Sensitive information is filtered before it reaches a model. Access follows least-privilege principles, and your data stays in your systems.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">When someone needs to override it</h3>
+      <p>Nothing runs that your team cannot stop, change or switch off. Decisions are logged and reviewable.</p>
+    </div>
+    <div class="guard-item guard-item-wide">
+      <h3 class="serif">When someone has to explain a decision</h3>
+      <p>An automated decision your staff cannot explain is a decision they cannot stand behind. Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
+    </div>
+  </div>
+
+  <div class="guard-eval">
+    <div class="guard-subhead">EVALUATION AND MONITORING</div>
+    <div class="guard-item">
+      <h3 class="serif">How I know it works</h3>
+      <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What it did, why, and what it cost</h3>
+      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is tracked per run, so spend is a number you can see rather than a surprise at the end of the month.</p>
+    </div>
+  </div>
+
+  <div class="tech-strip">
+    <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
+    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · RAG pipelines · vector databases</p>
+    <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
+    <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Google Workspace · Intercom · Zendesk · Vercel</p>
+  </div>
 </section>
 
 <section id="about" class="content">
   <div class="about-grid">
     <div>
-      <div class="eyebrow">About</div>
+      <div class="eyebrow">ABOUT</div>
       <h2 class="section-heading serif">Built around how people actually work</h2>
-      <img class="about-portrait" src="images/PLS04023.jpg" alt="Jai Goldberg" width="300" height="375">
+      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg" width="300" height="225">
     </div>
     <div class="about-body">
-      <p>I came to AI engineering from education and psychology, so I start with people: how a team actually works, where the hours go, and what a system needs to do to be trusted.</p>
-      <p>Production systems fail in boring ways. Someone uploads the wrong file, an API times out, an edge case shows up on day one. I build for that path as much as the happy one: clear escalation to humans, outputs checked before they ship, nothing your team can't override.</p>
-      <p>I work remotely and in person with clients across North America, Europe, the Middle East, and APAC. One standard applies to everything: measurably less manual work, and nothing broken along the way. I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used by 100+ people weekly.</p>
+      <p>I came to AI engineering from psychology and instructional design. Years spent designing courses and assessments, mostly in subjects I had to learn myself first, then leading the team that built them. I taught myself to build software the same way, and it shows in how I work: I start with people, how a team actually operates, where the hours go, and what a system has to do before anyone trusts it.</p>
+      <p>The teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
+      <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC. Wherever I work, the goal is the same: measurably less manual work, and nothing broken along the way.</p>
+      <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used by 100+ people each week.</p>
     </div>
   </div>
 </section>
@@ -468,7 +745,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <div class="contact-head">
     <div class="eyebrow">Contact</div>
     <h2 class="serif">Book an intro call</h2>
-    <p>Fifteen minutes to map where automation would pay off in your operation. No prep needed.</p>
+    <p>Fifteen minutes to work out which part of your operation to start with. No prep needed.</p>
     <p class="quiet-email">Prefer email? <a href="mailto:jai@teq.biz">Write to jai@teq.biz</a></p>
   </div>
 
@@ -490,6 +767,71 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 </section>
 
 <footer>&copy; 2026 Jai Goldberg, AI solutions engineering &amp; automation consulting</footer>
+
+<script>
+(function () {
+  var section = document.getElementById('work');
+  var tabs = Array.prototype.slice.call(section.querySelectorAll('[role="tab"]'));
+  var panels = tabs.map(function (tab) {
+    return document.getElementById(tab.getAttribute('aria-controls'));
+  });
+  var ids = panels.map(function (panel) { return panel.id; });
+  var current = 0;
+  var rotateTimer = null;
+  var stopped = false;
+
+  function activate(index, updateHash) {
+    current = index;
+    tabs.forEach(function (tab, i) {
+      var selected = i === index;
+      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      tab.tabIndex = selected ? 0 : -1;
+      panels[i].classList.toggle('is-active', selected);
+    });
+    if (updateHash) history.replaceState(null, '', '#' + ids[index]);
+  }
+
+  var initial = ids.indexOf(location.hash.replace('#', ''));
+  activate(initial >= 0 ? initial : 0, false);
+
+  function pauseRotation() {
+    if (rotateTimer) { clearInterval(rotateTimer); rotateTimer = null; }
+  }
+  function startRotation() {
+    if (stopped || rotateTimer) return;
+    rotateTimer = setInterval(function () {
+      activate((current + 1) % tabs.length, true);
+    }, 12000);
+  }
+  function stopRotation() {
+    stopped = true;
+    pauseRotation();
+  }
+
+  startRotation();
+  section.addEventListener('mouseenter', pauseRotation);
+  section.addEventListener('mouseleave', startRotation);
+  section.addEventListener('focusin', pauseRotation);
+  section.addEventListener('focusout', startRotation);
+  section.addEventListener('click', stopRotation);
+  section.addEventListener('keydown', stopRotation);
+  section.addEventListener('touchstart', stopRotation, { passive: true });
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { activate(i, true); });
+    tab.addEventListener('keydown', function (event) {
+      var next = null;
+      if (event.key === 'ArrowRight') next = (i + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+      if (next !== null) {
+        event.preventDefault();
+        activate(next, true);
+        tabs[next].focus();
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
