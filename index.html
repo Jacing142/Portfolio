@@ -118,13 +118,14 @@
   /* Hero proof line */
   .hero-proof {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0; margin-top: 56px; text-align: left;
+    gap: 0; margin-top: 56px;
   }
   .hero-proof > span {
-    display: flex; flex-direction: column;
-    padding: 4px 24px; border-left: 1px solid var(--hairline);
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 4px 20px;
+    border-left: 1px solid var(--hairline);
   }
-  .hero-proof > span:first-child { border-left: none; padding-left: 0; }
+  .hero-proof > span:first-child { border-left: none; }
   .proof-num {
     font-size: clamp(30px, 3.2vw, 44px); font-weight: 400;
     color: var(--accent); line-height: 1.05; margin-bottom: 10px;
@@ -132,7 +133,7 @@
   .proof-label { font-size: 15px; line-height: 1.5; color: var(--muted); }
   @media (max-width: 720px) {
     .hero-proof { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
-    .hero-proof > span:nth-child(odd) { border-left: none; padding-left: 0; }
+    .hero-proof > span:nth-child(odd) { border-left: none; }
   }
 
   section.content {
@@ -169,12 +170,15 @@
   /* Work */
   .work-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
   .work-tab {
-    font-family: inherit; font-size: 14px; font-weight: 600; color: var(--muted);
+    font-family: inherit; font-size: 14px; font-weight: 500; color: var(--faint);
     background: none; border: 0; border-radius: 999px;
     padding: 9px 18px; cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
   }
   .work-tab:hover { color: var(--ink); }
-  .work-tab[aria-selected="true"] { background: var(--ink); color: #FFFFFF; }
+  .work-tab[aria-selected="true"] {
+    background: var(--ink); color: #FFFFFF; font-weight: 600;
+  }
   @media (max-width: 720px) {
     .work-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
     .work-tab { padding: 9px 6px; text-align: center; }
@@ -189,6 +193,7 @@
   }
   .case-card {
     display: flex; flex-direction: column; padding: 30px;
+    border-color: var(--card-border-hover);
   }
   .case-kicker {
     margin-bottom: 8px; font-size: 12px; font-weight: 600;
@@ -232,8 +237,8 @@
     margin-top: clamp(48px, 7vw, 64px); padding-top: 30px;
     border-top: 1px solid var(--hairline);
   }
-  .tech-line { margin: 0; font-size: 13px; line-height: 1.8; color: var(--faint); }
-  .tech-cat { font-size: 12px; color: var(--muted); }
+  .tech-line { margin: 0; font-size: 15px; line-height: 1.75; color: var(--faint); }
+  .tech-cat { font-size: 14px; color: var(--muted); }
 
   .quiet-email { margin: 16px 0 0; }
   .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
@@ -256,7 +261,7 @@
   /* About */
   .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
   .about-portrait {
-    margin-top: 28px; width: min(100%, 300px); height: auto;
+    margin-top: 44px; width: min(100%, 440px); height: auto;
     aspect-ratio: 3 / 2; object-fit: cover;
     border: 1px solid var(--card-border); border-radius: 6px;
   }
@@ -305,8 +310,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 <nav class="nav">
   <a href="#top" class="nav-name">Jai Goldberg</a>
   <div class="nav-links">
-    <a href="#framework" class="nav-link">Framework</a>
-    <a href="#work" class="nav-link">Work</a>
+    <a href="#framework" class="nav-link">The Loop</a>
+    <a href="#work" class="nav-link">Case Studies</a>
     <a href="#guardrails" class="nav-link">Guardrails</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#contact" class="nav-link">Contact</a>
@@ -318,7 +323,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <img class="headshot" src="data:image/webp;base64,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" alt="Jai Goldberg" width="104" height="104">
   <div class="hero-kicker">AI &amp; Automation Solutions for Education</div>
   <h1 class="serif">Manual work, measurably removed.</h1>
-  <p>I find the repetitive work inside an education operation, build the systems that remove it, and leave your team running them.</p>
+  <p>I find the repetitive work across your education operation, build the systems that remove it, and leave your team running them.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
     <a href="#framework" class="text-link">See my work</a>
@@ -742,7 +747,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
   <div class="tech-strip">
     <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
-    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · RAG pipelines · vector databases</p>
+    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · Ragas · LangSmith · RAG pipelines · vector databases</p>
     <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
     <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Google Workspace · Intercom · Zendesk · Vercel</p>
   </div>
@@ -753,11 +758,11 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <div>
       <div class="eyebrow">ABOUT</div>
       <h2 class="section-heading serif">Built around how people actually work</h2>
-      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="300" height="200" loading="lazy">
+      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="440" height="293" loading="lazy">
     </div>
     <div class="about-body">
       <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
-      <p>The teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
+      <p>Teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
       <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC. Wherever I work, the goal is the same: measurably less manual work, and nothing broken along the way.</p>
       <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used by 100+ people each week.</p>
     </div>
