@@ -117,12 +117,23 @@
 
   /* Hero proof line */
   .hero-proof {
-    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center;
-    gap: 6px 12px; margin-top: 40px;
-    font-size: 14px; line-height: 1.4; color: var(--muted);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 56px; text-align: left;
   }
-  .proof-num { font-weight: 600; color: var(--ink-soft); }
-  .proof-sep { color: var(--faint); }
+  .hero-proof > span {
+    display: flex; flex-direction: column;
+    padding: 4px 24px; border-left: 1px solid var(--hairline);
+  }
+  .hero-proof > span:first-child { border-left: none; padding-left: 0; }
+  .proof-num {
+    font-size: clamp(30px, 3.2vw, 44px); font-weight: 400;
+    color: var(--accent); line-height: 1.05; margin-bottom: 10px;
+  }
+  .proof-label { font-size: 15px; line-height: 1.5; color: var(--muted); }
+  @media (max-width: 720px) {
+    .hero-proof { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+    .hero-proof > span:nth-child(odd) { border-left: none; padding-left: 0; }
+  }
 
   section.content {
     max-width: 1120px; margin: 0 auto;
@@ -137,7 +148,7 @@
 
   /* Framework */
   .framework-grid {
-    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    display: grid; grid-template-columns: minmax(0, 62fr) minmax(0, 38fr);
     gap: clamp(36px, 5vw, 64px);
   }
   .framework-lede {
@@ -235,19 +246,12 @@
   .process { list-style: none; margin: 28px 0 0; padding: 0; max-width: 760px; }
   .process-step {
     display: flex; gap: clamp(20px, 4vw, 36px);
-    padding: 26px 0; border-top: 1px solid var(--hairline);
+    padding: 18px 0; border-top: 1px solid var(--hairline);
   }
   .process-step:first-child { border-top: none; padding-top: 8px; }
-  .process-num { font-size: 32px; font-weight: 500; color: var(--accent); min-width: 34px; line-height: 1.1; }
-  .process-step h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 23px; }
+  .process-num { font-size: 26px; font-weight: 500; color: var(--accent); min-width: 34px; line-height: 1.1; }
+  .process-step h3 { margin: 0; font-weight: 500; color: var(--ink); font-size: 20px; }
   .process-step p { margin: 8px 0 0; max-width: 560px; font-size: 15px; line-height: 1.55; color: var(--muted); }
-  .process-icon {
-    margin-left: auto; margin-top: -2px; flex-shrink: 0;
-    color: var(--accent); opacity: 0.6;
-  }
-  @media (max-width: 600px) {
-    .process-icon { display: none; }
-  }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
@@ -268,18 +272,10 @@
   .contact-head { text-align: center; }
   .contact-head h2 { font-size: clamp(30px, 4.5vw, 42px); }
   .contact-head p { margin: 16px auto 0; max-width: 520px; font-size: 16px; line-height: 1.55; color: var(--muted); }
-  .calendly-embed {
-    min-height: 780px;
-    overflow: hidden;
-  }
-  .calendly-embed {
-    max-width: 780px;
-    margin: 36px auto 0;
-    min-height: 780px;
-    overflow: hidden;
-  }
+  .calendly-embed { max-width: 780px; margin: 36px auto 0; }
+  .calendly-embed iframe { width: 100%; height: 820px; border: none; border-radius: 6px; }
   @media (max-width: 640px) {
-    .calendly-embed, .calendly-embed iframe { height: 1000px; min-height: 1000px; }
+    .calendly-embed iframe { height: 1000px; }
   }
   .contact-actions {
     display: flex; align-items: center; justify-content: center; gap: 24px;
@@ -322,19 +318,16 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <img class="headshot" src="data:image/webp;base64,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" alt="Jai Goldberg" width="104" height="104">
   <div class="hero-kicker">AI &amp; Automation Solutions for Education</div>
   <h1 class="serif">Manual work, measurably removed.</h1>
-  <p>Education organisations run on a lot of manual work. I find where it is, build the systems and automation that remove it, and get teams using AI in their day-to-day work.</p>
+  <p>I find the repetitive work inside an education operation, build the systems that remove it, and leave your team running them.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
     <a href="#framework" class="text-link">See my work</a>
   </div>
   <div class="hero-proof">
-    <span><span class="proof-num">20K+</span> learners supported</span>
-    <span class="proof-sep" aria-hidden="true">·</span>
-    <span><span class="proof-num">18,600</span> reports generated</span>
-    <span class="proof-sep" aria-hidden="true">·</span>
-    <span><span class="proof-num">40%</span> less course production time</span>
-    <span class="proof-sep" aria-hidden="true">·</span>
-    <span><span class="proof-num">100+</span> staff trained</span>
+    <span><span class="proof-num serif">20K+</span><span class="proof-label">learners supported</span></span>
+    <span><span class="proof-num serif">18,600</span><span class="proof-label">reports generated</span></span>
+    <span><span class="proof-num serif">40%</span><span class="proof-label">less course production time</span></span>
+    <span><span class="proof-num serif">100+</span><span class="proof-label">staff trained</span></span>
   </div>
 </header>
 
@@ -357,7 +350,6 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <h3 class="serif">Discovery</h3>
             <p>A short call, then a look at where your team's hours actually go. We pick the one workflow with the clearest payoff.</p>
           </div>
-          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </li>
         <li class="process-step">
           <div class="process-num serif">2</div>
@@ -365,23 +357,20 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <h3 class="serif">Scope and ROI</h3>
             <p>Fixed scope, expected hours saved, and what it costs, before anything gets built. You decide with numbers, not a pitch.</p>
           </div>
-          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
         </li>
         <li class="process-step">
           <div class="process-num serif">3</div>
           <div>
             <h3 class="serif">Build with guardrails</h3>
-            <p>QA rubrics on every output, fallbacks for when things fail, least-privilege access. Your data stays in your systems.</p>
+            <p>Built to fail safely, and to scale. When something goes wrong, a person sees it before a learner does. <a href="#guardrails">See how &darr;</a></p>
           </div>
-          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
         </li>
         <li class="process-step">
           <div class="process-num serif">4</div>
           <div>
             <h3 class="serif">Handover and ownership</h3>
-            <p>Documentation, monitoring, and your team trained to run it. You are not paying for a build. You are paying for someone who stays accountable.</p>
+            <p>Documentation, monitoring, and your team trained to run it. You'll know what it costs to keep running before you commit.</p>
           </div>
-          <svg class="process-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
         </li>
       </ol>
     </div>
@@ -410,7 +399,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
         <dl class="case-fields">
           <div class="case-field">
             <dt>Problem</dt>
-            <dd>Turning subject-matter-expert input into finished course material was slow and almost entirely manual, and the bottleneck was the same every time.</dd>
+            <dd>Turning expert input into finished material was almost entirely manual. Same bottleneck, every course.</dd>
           </div>
           <div class="case-field">
             <dt>Solution</dt>
@@ -545,7 +534,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
           <div class="case-field">
             <dt>Solution</dt>
-            <dd>A conversational assessment designed to test understanding rather than completion, using the protégé effect: the assistant deliberately gets something wrong, and the learner has to catch it and explain why. The output is an auditable record of the exchange, intended as evidence of what was and was not understood.</dd>
+            <dd>A conversational assessment. The assistant gets something wrong on purpose, and the learner has to catch it and explain why. What comes out is an auditable record of what they actually understood.</dd>
           </div>
           <div class="case-field">
             <dt>Outcome</dt>
@@ -557,7 +546,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
           <div class="case-field">
             <dt>My role</dt>
-            <dd>Product · Multi-agent architecture · Scoring design · Deployment</dd>
+            <dd>Product · Bloom's-based scoring design · Multi-agent architecture · Deployment</dd>
           </div>
           <div class="case-field">
             <dt>Tools</dt>
@@ -657,7 +646,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dd>Behavioural analysis of xAPI and LMS events to locate drop-off and friction, then targeted changes to the material and the interventions around it, measured against the same data.</dd>
           </div>
           <div class="case-field">
-            <dt>In-house implementation</dt>
+            <dt>Measured in-house</dt>
             <dd>Course completion raised from 16% to 42% on the lowest-performing courses, and post-assessment scores from 68% to 84%.</dd>
           </div>
           <div class="case-field">
@@ -676,42 +665,33 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
   <div class="guardrails-intro">
     <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
-    <p>The goal isn't to take people out of the process. It's to take out the repetitive work while keeping the decisions that matter visible and reviewable.</p>
   </div>
 
   <div class="guardrails-grid">
     <div class="guard-item">
-      <h3 class="serif">When the model is confident and wrong</h3>
-      <p>Outputs are scored against defined checks before release. Below a threshold, nothing ships. It goes to a person with the full context attached, not a bare flag saying something needs checking.</p>
+      <h3 class="serif">What if it gets something wrong?</h3>
+      <p>Outputs are scored against defined checks before release. Below the threshold nothing ships, it goes to a person with the full context.</p>
     </div>
     <div class="guard-item">
-      <h3 class="serif">When the output isn't good enough</h3>
-      <p>Generated work has to meet defined quality criteria before release. Anything that falls short goes to review rather than out the door.</p>
+      <h3 class="serif">What if it breaks?</h3>
+      <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
     </div>
     <div class="guard-item">
-      <h3 class="serif">When the input is wrong</h3>
-      <p>Validation at intake catches bad or ambiguous input before it enters the workflow.</p>
+      <h3 class="serif">What about our data?</h3>
+      <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
     </div>
     <div class="guard-item">
-      <h3 class="serif">When something breaks</h3>
-      <p>Retries and fallbacks keep work moving where possible. Silent failure is the worst outcome, so failed runs are surfaced rather than swallowed.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">When the data is sensitive</h3>
-      <p>Sensitive information is filtered before it reaches a model. Access follows least-privilege principles, and your data stays in your systems.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">When someone needs to override it</h3>
-      <p>Nothing runs that your team cannot stop, change or switch off. Decisions are logged and reviewable.</p>
+      <h3 class="serif">Can we turn it off?</h3>
+      <p>Nothing runs that your team cannot stop, change or switch off.</p>
     </div>
     <div class="guard-item guard-item-wide">
-      <h3 class="serif">When someone has to explain a decision</h3>
-      <p>An automated decision your staff cannot explain is a decision they cannot stand behind. Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
+      <h3 class="serif">Can we explain it to an auditor?</h3>
+      <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
     </div>
   </div>
 
   <div class="guard-eval">
-    <div class="guard-subhead">EVALUATION AND MONITORING</div>
+    <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
     <div class="guard-item">
       <h3 class="serif">How I know it works</h3>
       <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
@@ -738,7 +718,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg" width="300" height="225">
     </div>
     <div class="about-body">
-      <p>I came to AI engineering from psychology and instructional design. Years spent designing courses and assessments, mostly in subjects I had to learn myself first, then leading the team that built them. I taught myself to build software the same way, and it shows in how I work: I start with people, how a team actually operates, where the hours go, and what a system has to do before anyone trusts it.</p>
+      <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
       <p>The teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
       <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC. Wherever I work, the goal is the same: measurably less manual work, and nothing broken along the way.</p>
       <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used by 100+ people each week.</p>
