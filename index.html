@@ -156,8 +156,8 @@
     font-size: 16px; line-height: 1.55; color: var(--muted);
   }
   #loop-diagram {
-    width: 100%; aspect-ratio: 4 / 3; margin-top: 28px;
-    border: 1px dashed var(--hairline);
+    display: block; width: 100%; max-width: 680px;
+    height: auto; margin: 28px auto 0;
   }
   .loop-attribution {
     margin: 14px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--muted);
@@ -257,7 +257,7 @@
   .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
   .about-portrait {
     margin-top: 28px; width: min(100%, 300px); height: auto;
-    aspect-ratio: 4 / 3; object-fit: cover;
+    aspect-ratio: 3 / 2; object-fit: cover;
     border: 1px solid var(--card-border); border-radius: 6px;
   }
   .about-body p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
@@ -338,7 +338,45 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <h2 class="section-heading serif">The Education Operations Loop</h2>
       <p class="framework-lede">Six functions every education organisation runs on. This is where AI delivers the most value.</p>
       <!-- LOOP DIAGRAM: intentionally omitted. Preserve the placeholder exactly. Do not design or approximate the diagram in this pass. -->
-      <div id="loop-diagram" role="img" aria-label="The Education Operations Loop: Create, Deliver, Assess, Operate, Enable, Improve"></div>
+      <svg id="loop-diagram" width="100%" viewBox="0 0 680 510" xmlns="http://www.w3.org/2000/svg" role="img">
+        <title>The Education Operations Loop</title>
+        <desc>Six functions arranged in a continuous loop: Create, Deliver, Assess, Operate, Enable, then Improve, which returns to Create.</desc>
+
+        <defs>
+          <marker id="loop-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <g id="loop-ring">
+          <path d="M 293.1 86.6 A 170 170 0 0 1 395.3 410.7 A 170 170 0 0 1 276.3 92.3"
+                fill="none" stroke="var(--accent)" stroke-width="1.1" stroke-linecap="round"
+                marker-end="url(#loop-arrowhead)"/>
+        </g>
+
+        <g id="loop-nodes" fill="var(--bg)" stroke="var(--accent-border)" stroke-width="1">
+          <circle cx="340" cy="80"  r="55"/>
+          <circle cx="487" cy="165" r="55"/>
+          <circle cx="487" cy="335" r="55"/>
+          <circle cx="340" cy="420" r="55"/>
+          <circle cx="193" cy="335" r="55"/>
+          <circle cx="193" cy="165" r="55"/>
+        </g>
+
+        <g id="loop-labels" font-family="'Newsreader', Georgia, serif" font-size="18" fill="var(--ink)" text-anchor="middle">
+          <text x="340" y="80"  dominant-baseline="central">Create</text>
+          <text x="487" y="165" dominant-baseline="central">Deliver</text>
+          <text x="487" y="335" dominant-baseline="central">Assess</text>
+          <text x="340" y="420" dominant-baseline="central">Operate</text>
+          <text x="193" y="335" dominant-baseline="central">Enable</text>
+          <text x="193" y="165" dominant-baseline="central">Improve</text>
+        </g>
+
+        <g id="loop-centre" font-family="'Newsreader', Georgia, serif" font-size="13" fill="var(--muted)" text-anchor="middle" letter-spacing="1.6">
+          <text x="340" y="240" dominant-baseline="central">EDUCATION</text>
+          <text x="340" y="261" dominant-baseline="central">OPERATIONS</text>
+        </g>
+      </svg>
       <p class="loop-attribution">I worked inside this loop before I automated any part of it. Years in instructional design, building courses and assessments across everything from nursing to engineering.</p>
     </div>
     <div>
@@ -715,7 +753,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <div>
       <div class="eyebrow">ABOUT</div>
       <h2 class="section-heading serif">Built around how people actually work</h2>
-      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg" width="300" height="225">
+      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="300" height="200" loading="lazy">
     </div>
     <div class="about-body">
       <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
