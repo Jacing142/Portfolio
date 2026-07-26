@@ -215,6 +215,19 @@
   }
   .case-link a { color: var(--accent); border-bottom: 1px solid var(--hairline); }
   .case-link a:hover { border-bottom-color: var(--accent); }
+  .case-demo {
+    display: block; margin-top: 20px; padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+  }
+  .case-demo img {
+    width: 100%; height: auto;
+    border: 1px solid var(--card-border); border-radius: 4px;
+  }
+  .case-demo span {
+    display: block; margin-top: 10px;
+    font-size: 14px; color: var(--accent);
+  }
+  .case-demo:hover span { border-bottom: 1px solid var(--accent); }
   .guard-link { margin-top: 32px; max-width: 70ch; }
   .section-note {
     margin: 14px 0 0;
@@ -581,6 +594,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dd>Claude API · Google Workspace automation · Automated QA layer</dd>
           </div>
         </dl>
+        <a class="case-demo" href="images/demo-feedback-engine.png" target="_blank" rel="noopener">
+          <img src="images/demo-feedback-engine.png" alt="How one assessment item becomes different feedback for three different roles" loading="lazy" width="1600" height="808">
+          <span>See how it works &#8599;</span>
+        </a>
       </article>
       <article class="card case-card">
         <h4 class="serif">Bastidian</h4>
