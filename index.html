@@ -208,6 +208,18 @@
     text-transform: uppercase; color: var(--faint);
   }
   .case-field dd { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .case-link {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    font-size: 14px; line-height: 1.5; color: var(--muted);
+  }
+  .case-link a { color: var(--accent); border-bottom: 1px solid var(--hairline); }
+  .case-link a:hover { border-bottom-color: var(--accent); }
+  .guard-link { margin-top: 32px; max-width: 70ch; }
+  .section-note {
+    margin: 14px 0 0; max-width: 60ch;
+    font-size: 15px; line-height: 1.6; color: var(--muted);
+  }
 
   /* Guardrails */
   .guardrails-intro { margin-top: 22px; }
@@ -424,6 +436,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <div class="eyebrow">CASE STUDIES</div>
   <h2 class="section-heading serif">What this looks like in practice</h2>
 
+  <p class="section-note">Client systems aren't mine to publish. Anything shown here is rebuilt with synthetic data, open source, or my own products.</p>
+
   <div class="work-tabs" role="tablist">
     <button type="button" class="work-tab" id="tab-create" role="tab" aria-selected="true" aria-controls="create">Create</button>
     <button type="button" class="work-tab" id="tab-deliver" role="tab" aria-selected="false" aria-controls="deliver" tabindex="-1">Deliver</button>
@@ -501,6 +515,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dd>OpenAI API · RAG pipeline · LMS integration</dd>
           </div>
         </dl>
+        <p class="case-link"><a href="https://github.com/Jacing142/za-pizza-voice-ai-architecture" target="_blank" rel="noopener">Public architecture and ROI model for the same intent-routing and escalation stack, designed for a restaurant chain &#8599;</a></p>
       </article>
       <article class="card case-card">
         <h4 class="serif">Applicant Completion Automation</h4>
@@ -596,6 +611,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dd>LangGraph · Anthropic &amp; OpenAI APIs · Supabase · Vercel</dd>
           </div>
         </dl>
+        <p class="case-link">Built first for regulated finance, where evidence of understanding is a compliance requirement. The same assessment engine applies to education. <a href="https://bastidian.vercel.app/Sample_Report.html" target="_blank" rel="noopener">See a sample evidence report &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -745,6 +761,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     </div>
   </div>
 
+  <p class="case-link guard-link"><a href="https://bastidian.vercel.app/Sample_Appendix.html" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
+
   <div class="tech-strip">
     <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
     <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · Ragas · LangSmith · RAG pipelines · vector databases</p>
@@ -764,7 +782,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
       <p>Teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
       <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC. Wherever I work, the goal is the same: measurably less manual work, and nothing broken along the way.</p>
-      <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used by 100+ people each week.</p>
+      <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used weekly by 100+ practitioners exploring LLM conversations safely on their own machine.</p>
     </div>
   </div>
 </section>
