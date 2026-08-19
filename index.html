@@ -285,6 +285,34 @@
   .tech-line { margin: 0; font-size: 15px; line-height: 1.75; color: var(--faint); }
   .tech-cat { font-size: 14px; color: var(--muted); }
 
+  /* Outside education */
+  .beyond-subhead {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .beyond-lede {
+    margin: 14px 0 0; max-width: 70ch;
+    font-size: 16px; line-height: 1.6; color: var(--muted);
+  }
+  .beyond-list { margin-top: clamp(32px, 5vw, 44px); }
+  .beyond-item {
+    max-width: 78ch; padding-top: 18px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .beyond-item + .beyond-item { margin-top: 28px; }
+  .beyond-item h3 { margin: 0; font-weight: 500; font-size: 18px; color: var(--ink); }
+  .beyond-tag {
+    margin-left: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .beyond-item p { margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+  .guard-aside {
+    margin: 32px 0 0; max-width: 70ch;
+    font-size: 15px; line-height: 1.6; color: var(--muted);
+  }
+
   .quiet-email { margin: 16px 0 0; }
   .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
   .quiet-email a {
@@ -478,6 +506,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p class="node-def">Producing the material people learn from.</p>
     <div class="panel-cards">
       <article class="card case-card">
+        <div class="case-kicker">E-learning · iPrep</div>
         <h4 class="serif">AI Course Production Workflow</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -514,6 +543,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p class="node-def">Getting learners through it, and answering them along the way.</p>
     <div class="panel-cards">
       <article class="card case-card">
+        <div class="case-kicker">E-learning</div>
         <h4 class="serif">Learner Support Virtual Agent</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -548,6 +578,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
         <p class="case-link"><a href="https://github.com/Jacing142/za-pizza-voice-ai-architecture#readme" target="_blank" rel="noopener">Public architecture and ROI model for the same intent-routing and escalation stack, designed for a restaurant chain &#8599;</a></p>
       </article>
       <article class="card case-card">
+        <div class="case-kicker">Tourism</div>
         <h4 class="serif">Applicant Completion Automation</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -588,6 +619,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p class="node-def">Finding out what learners actually understood.</p>
     <div class="panel-cards">
       <article class="card case-card">
+        <div class="case-kicker">In-person education</div>
         <h4 class="serif">Personalised Assessment Feedback Engine</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -621,6 +653,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
         </a>
       </article>
       <article class="card case-card">
+        <div class="case-kicker">Regtech</div>
         <h4 class="serif">Bastidian</h4>
         <p class="case-note">My own product, MVP</p>
         <dl class="case-fields">
@@ -663,6 +696,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p class="node-def">The administrative work that keeps everything else running.</p>
     <div class="panel-cards">
       <article class="card case-card">
+        <div class="case-kicker">Hospitality</div>
         <h4 class="serif">Operations Automation</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -735,7 +769,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p class="node-def">Learning from what the data shows, and feeding it back into the material.</p>
     <div class="panel-cards">
       <article class="card case-card">
-        <div class="case-kicker">Capability</div>
+        <div class="case-kicker">Education · Capability</div>
         <h4 class="serif">Post-publish analytics</h4>
         <dl class="case-fields">
           <div class="case-field">
@@ -756,6 +790,26 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
         </dl>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="beyond" class="content">
+  <div class="beyond-subhead">The same problems outside education</div>
+  <p class="beyond-lede">Different industries, same three problems: work arriving in a form nobody can use, data nobody can query, AI running with nothing watching it.</p>
+
+  <div class="beyond-list">
+    <div class="beyond-item">
+      <h3 class="serif">Ad and commerce data in one place<span class="beyond-tag">D2C ecommerce · Astroyogi</span></h3>
+      <p>Ad spend in Google, ad spend in Meta, orders in Shopify, shipping, payments, a SQL database. Every report assembled by hand. I specified the architecture and built the first stage, the Google and Meta merge; their team is building out the rest. The end is one chatbot anyone in the company can ask, not a report only an analyst can produce.</p>
+    </div>
+    <div class="beyond-item">
+      <h3 class="serif">Order intake<span class="beyond-tag">Logistics</span></h3>
+      <p>Orders came in as forms and emails and were re-keyed by hand before manufacturing could touch them, on six and seven figure deals. Now they arrive cleaned and structured in a sheet for QA. The confidence threshold is set high, so what it passes is right and a person handles the rest.</p>
+    </div>
+    <div class="beyond-item">
+      <h3 class="serif">AI agents reviewed and fixed<span class="beyond-tag">Consumer AI</span></h3>
+      <p>Tens of thousands of conversations a day, customer-facing and internal, and no way to see what any of it was doing. Guardrails sat in the prompt, some agents had none at all, customer data reached the model unmasked. One in five conversations started in the right language and switched mid-way. Under 1% now, and brand voice, tone, guardrails and skills defined once at company level instead of rebuilt by every team.</p>
     </div>
   </div>
 </section>
@@ -790,6 +844,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
     </div>
   </div>
+
+  <p class="guard-aside">Part of this list comes from seeing what happens without it. Reviewing another company's agents in production: guardrails in the system prompt, nothing logged, and no answer to what a conversation cost.</p>
 
   <div class="guard-eval">
     <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
