@@ -9,11 +9,11 @@
 <meta property="og:url" content="https://jais-portfolio-site.vercel.app/">
 <meta property="og:title" content="Jai Goldberg | AI &amp; Automation Solutions">
 <meta property="og:description" content="I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.">
-<meta property="og:image" content="images/og.png">
+<meta property="og:image" content="https://jais-portfolio-site.vercel.app/images/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jai Goldberg | AI &amp; Automation Solutions">
 <meta name="twitter:description" content="I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.">
-<meta name="twitter:image" content="images/og.png">
+<meta name="twitter:image" content="https://jais-portfolio-site.vercel.app/images/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232E4B33'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%23FCFBF8' text-anchor='middle'%3EJG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -490,7 +490,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="process-num serif">1</div>
           <div>
             <h3 class="serif">Discovery</h3>
-            <p>A short call, then a look at where your team's hours actually go. We pick the one workflow with the clearest payoff.</p>
+            <p>A short call, then a look at where your team's hours actually go, where your data already lives, and who will be maintaining this after I leave. We pick the one workflow with the clearest payoff.</p>
           </div>
         </li>
         <li class="process-step">
@@ -504,7 +504,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="process-num serif">3</div>
           <div>
             <h3 class="serif">Build with guardrails</h3>
-            <p>Built to fail safely, and to scale. When something goes wrong, a person sees it before a learner does. <a href="#guardrails">See how &darr;</a></p>
+            <p>Built to fail safely, and to scale. When something goes wrong, a person sees it before your customer does. <a href="#guardrails">See how &darr;</a></p>
           </div>
         </li>
         <li class="process-step">
@@ -528,7 +528,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
   </div>
 
-  <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, which is a weak default rather than a control, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost.</p>
+  <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, which is a weak default rather than a control, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost. That review was its own engagement: auditing and fixing systems already in production is work I take on without building anything new.</p>
 
   <details class="guard-disclosure">
     <summary>
@@ -590,6 +590,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   </details>
 
   <div class="tech-strip">
+    <p class="tech-line"><span class="tech-cat">How the stack gets chosen</span> · A team with engineers gets something their engineers can own. A team without one gets something they can maintain themselves. The tools follow the client, not the other way round.</p>
     <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · RAG pipelines · vector databases · LangSmith · Ragas</p>
     <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Python · JavaScript · Google Apps Script · REST APIs · webhooks · Zapier · FastAPI</p>
     <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Vercel · Google Workspace · Zendesk · Intercom</p>
@@ -643,6 +644,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="case-field">
             <dt>Tools</dt>
             <dd>Google Apps Script · LLM APIs · Google Sheets</dd>
+          </div>
+          <div class="case-field">
+            <dt>Why this stack</dt>
+            <dd>Their orders already lived in Google Sheets and there was nobody in the building who would maintain a service. Building where the work already happened meant the team could change it without me.</dd>
           </div>
         </dl>
         <p class="case-link">Two days in, the first version could not clear its own confidence threshold on handwritten orders. I took that back rather than ship something that saved nothing, and we rescoped to the flow that did pay back.</p>
@@ -712,6 +717,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dt>Tools</dt>
             <dd>Google Apps Script · LLM APIs · Gamma · n8n</dd>
           </div>
+          <div class="case-field">
+            <dt>Why this stack</dt>
+            <dd>The people using it are content and instructional designers, not engineers. It runs inside the tools they already had open.</dd>
+          </div>
         </dl>
       </article>
       <article class="card case-card">
@@ -741,6 +750,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="case-field">
             <dt>Tools</dt>
             <dd>Claude API · Google Workspace automation · Automated QA layer</dd>
+          </div>
+          <div class="case-field">
+            <dt>Why this stack</dt>
+            <dd>A school with no engineering function. The pipeline runs in the workspace they already administer, so nothing new had to be supported.</dd>
           </div>
         </dl>
         <a class="case-demo" href="images/demo-feedback-engine.png" target="_blank" rel="noopener">
@@ -852,7 +865,6 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <img src="images/demo-va-architecture.png" alt="Three tiers of call containment, with global fallback rules applied at every node" loading="lazy" width="1600" height="1010">
           <span>See the architecture &#8599;</span>
         </a>
-        <p class="case-link"><a href="https://github.com/Jacing142/za-pizza-voice-ai-architecture#readme" target="_blank" rel="noopener">Public architecture and ROI model for the same intent-routing and escalation stack, designed for a restaurant chain &#8599;</a></p>
       </article>
     </div>
   </div>
@@ -888,6 +900,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="case-field">
             <dt>Tools</dt>
             <dd>Fivetran · BigQuery · dbt · Google Sheets</dd>
+          </div>
+          <div class="case-field">
+            <dt>Why this stack</dt>
+            <dd>They have engineers, so the architecture was staged for their team to own and extend rather than for me to run. That is why this one looks nothing like the others.</dd>
           </div>
         </dl>
       </article>
