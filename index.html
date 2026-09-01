@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jai Goldberg | AI &amp; Automation Solutions for Education</title>
-<meta name="description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<title>Jai Goldberg | AI &amp; Automation Solutions</title>
+<meta name="description" content="I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jais-portfolio-site.vercel.app/">
-<meta property="og:title" content="Jai Goldberg | AI &amp; Automation Solutions for Education">
-<meta property="og:description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<meta property="og:title" content="Jai Goldberg | AI &amp; Automation Solutions">
+<meta property="og:description" content="I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.">
 <meta property="og:image" content="images/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jai Goldberg | AI &amp; Automation Solutions for Education">
-<meta name="twitter:description" content="I find the manual work inside education organisations, build the systems and automation that remove it, and get teams using AI in their day-to-day work.">
+<meta name="twitter:title" content="Jai Goldberg | AI &amp; Automation Solutions">
+<meta name="twitter:description" content="I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.">
 <meta name="twitter:image" content="images/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232E4B33'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%23FCFBF8' text-anchor='middle'%3EJG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
     --ink: #16150F;
     --ink-soft: #3A392F;
     --muted: #5B594F;
-    --faint: #93917F;
+    --faint: #6E6C5E;
     --accent: #2E4B33;
     --accent-border: #CBD6CC;
     --bg: #FCFBF8;
@@ -44,6 +44,11 @@
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { color: var(--ink); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
   img { max-width: 100%; display: block; }
 
   .serif { font-family: 'Newsreader', Georgia, serif; }
@@ -188,7 +193,7 @@
   .node-name { margin: 0; font-weight: 500; color: var(--ink); font-size: 24px; }
   .node-def { margin: 6px 0 0; font-size: 15px; font-style: italic; color: var(--muted); }
   .panel-cards {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
     gap: 20px; margin-top: 24px;
   }
   .case-card {
@@ -284,31 +289,6 @@
   }
   .tech-line { margin: 0; font-size: 15px; line-height: 1.75; color: var(--faint); }
   .tech-cat { font-size: 14px; color: var(--muted); }
-
-  /* Outside education */
-  .beyond-subhead {
-    margin: 0;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--accent);
-  }
-  .beyond-lede {
-    margin: 14px 0 0; max-width: 70ch;
-    font-size: 16px; line-height: 1.6; color: var(--muted);
-  }
-  .beyond-list { margin-top: clamp(32px, 5vw, 44px); }
-  .beyond-item {
-    max-width: 78ch; padding-top: 18px;
-    border-top: 1px solid var(--hairline-soft);
-  }
-  .beyond-item + .beyond-item { margin-top: 28px; }
-  .beyond-item h3 { margin: 0; font-weight: 500; font-size: 18px; color: var(--ink); }
-  .beyond-tag {
-    margin-left: 10px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--accent);
-  }
-  .beyond-item p { margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
   .guard-aside {
     margin: 32px 0 0; max-width: 70ch;
     font-size: 15px; line-height: 1.6; color: var(--muted);
@@ -385,8 +365,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <a href="#top" class="nav-name">Jai Goldberg</a>
   <div class="nav-links">
     <a href="#framework" class="nav-link">The Loop</a>
-    <a href="#work" class="nav-link">Case Studies</a>
     <a href="#guardrails" class="nav-link">Guardrails</a>
+    <a href="#work" class="nav-link">Case Studies</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#contact" class="nav-link">Contact</a>
     <a href="#contact" class="btn-dark nav-cta">Book a call</a>
@@ -395,18 +375,18 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
 <header id="top" class="hero">
   <img class="headshot" src="data:image/webp;base64,UklGRqgKAABXRUJQVlA4WAoAAAAgAAAAzwAAdgAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgguggAALAnAJ0BKtAAdwA+USiQRiOioaEjddpocAoJZW7gMGi9pBinE2UNXkYTQvAnsxelzbzc776Wt589ADpgJ9x0Ki5XB/abGgy0HXmjvHWTQVeWQj0hNBKoZ0rCJZb4eEVTCJ3eEk9PwbwewenbQJgQTExt1xACq94BmEjr3Ei7WvXffU5TMQ0g0s0C7QLQsN6zyA0ZbkgjIudvZnL/JWEwyaiHOIVzsMcOfyQFmloywQds80VUEAcsW+/QCBesRqvtrTOyHg79hx2qfeyp/QbLUgLmqGu2FEMqYQwxrWiPVjk3Ohq/zh6q8uNuPZ2fiWkvLshSolvRSyO4f5+gjYpbZbThnaJESAmkDs8magY/WHX9lKza9PocC6HJU+zSvV03Z52Gt0ByuIxD85JyOBY8Qqnzs6XBdF2WqHmgfZvVinszcdMwwQOAAP7vN4V7ZqrZN+GIO3xZDEh3H0K85KAX31mduc1ovVGf1Nz4E3wm4FgVeX1FTyJ8ghX1L2PxgRrVlO2wmjCcNimgo9FirPoYEeMnVcTLxHg86INTntNZ5qsgNX8DeLRlUVrnw7zKT0NfNl2x7YmmwOGQOSdUo5ProYxvR6ogH/nzQiP/Zv01O+WIvOTQPA3TNT7VTiIyhjlnfzpRFKT9GL63JITi5MiMa2NMgMo8M30untUczCdURP8qodaXiDPl84fn7isklbT5wVvzdyOaat6jrGe3htI0bjiI1Un+6f6F5z8nkkxbZ8/wQ/cqcvUWj/ftIowMWQgdiaO/K3JUe2/Fr+ekNCQG1P1N9Yi/e5ulZTCCm0PR9CA0UvmWuhh2ZF9cQ4tyvgaoFG13htjGaEv95G6gxySjMvR4Xe9plMSxl3Kau2jmlnW472T0UTHFA99TvCQpO5Tfi0OneV3eSN7v5C+tOmqsuXmQEvfRAdgO2Kjq9KNHG4alzOSxH4Ux5R7e0Nvf9D+pAVm6qwOgvZYMOIGFeHiw0jeANz+bmx1904+GeWKm1IstyTYefn+BVIJSZ3M5311a6F+4ign9/CL2wP8Pcx+NfkULcfKLxcmn6cLQmartEsCBL32P/ktQtamYGpPWUDaanY9b0hBQeVCKBUB10kg75RXd6FbIhAuc1B5bhEgA3U3zkR13mmgeFmXSUeKi97+wKHnCX88h3ZHB8/9D0Dj0eMFJ3kwsbxW+v4YqCGBPi1526MCS7NEEWjYKIAAURyVq8AHmux+DgdHLjw162CeCcQDST3ltcuawAkPv2eMtien+n/TrCgy/Nyl7WBhU9bae6D4d/GXmd27gUAgvitDEw/qI/I8Zfv3ZBh5/CZPJNMI63BpyzCLJtquUQGfd9uHd1barCjiAvCGY2ggveApr7QOtcJR82xN+b9DepWp3VmNaLUvwBtH/AK8aAZuhlUCaEqVXJN4Yto5KANQzHPgmeTlOatj8AJWvqKawJMmI8Olk+hHn11FRA2146dYM9pwoNgMhqplUO6GWdPu0kwuTm4WYCITVJfaNQ7u2bDLoTNK7Jl8pnPp3DiMhnhwm/2imx1aUeTC0iaAmZR9B0KxKzXAWd5AY8mL/aK2AP/6KWLiNuQpoyhLOdhYoUm+mtDu9tKTZBTk4IlX7ZcXZxYQeJmFlPzICYgKd2b7T26Q1HCG6dvGWXKnsUNz6ryxASJEWAJEFS+ybzTbmmUBClR1+x6BCaS7cQ3U2uTKlmPjqgAVLS5SuhU7/JhLd92cZjGLRaBiATBDJSImt6UXHNq4z0m1nE7Zl8j0SDUmfJE0t0EjkxGm0G1eBnvw9YnkUxlHZcz/1pkoxFXYcDFz56ELSrljevbE3aea8/+tQE6oyIoXjPkBeB9K857WmoZOyE4SdLvanHdgXDBtbYUfGFbACn2wuaI+fpvUxxXhfkcUD8yWBxIttMVjTywbarcW0V7RfrZn63i8yAG7+O+JRNg3RKAod9CInkTGtZ9t5J5jhi14cOYTWnI6crURo1ntodwbw8XMn83BM/i1fGy2HaICu9X+3wxaifm8xq3S03PkQ14LeJwbERo37y5S3/DSB1Z3omOuj3RkSw7l+BOAYKgbq+dg6+bJZhGOAUvW0qbO82Oc06P/Rhqb35XpFmLT9ZjBAAUZc7hEmc66VimaUgM7cJXmhEhZiEc/K1+QZ44it+iCKMp8hPHBqTnEKjWwz0dxFYsIqET2Cjd7P83xsQIfEG2h1ckVICjbPencVAEdrmRZAFZSqDYk4JZv7/HJfvC3pZ7ABHMB7d7BfP4iBKPbWqBlyEqOfJnH5d8h+jKvFLUy8TUpX53HRrQDHhxya8h2D0nvduZVih6c6bYmCrLQIju1jgb199AAf7VDm75eMQMhrmCoHzUKXfqglF+UG0QaO2fTaBZwH3m7yLk5yNbUCj59htt8iNzaiBKg+CC2OUW7NRy7+i6MyhJvUySD7jMyBTnOeLE2UtwF64cqe36Ng3HI0GLFgvY2uK9F/IIb3b+l75q+czB3fbcXdayWk8HNT0YWqwRhp/H+6IOOlYKp8ONyCUjvtJSPue5NI/6avOnUGySIdXZ4UgtEjV7hpRPdwR54Ub1lznjxjG3dKA3aO1jabzuFjAiWgP+Kvquv7VguDHmst1Fy9xyG1lZlEVb/utSPlUSU8pQnGcnNW5KiQuMTD0AFXbxL8RED8qir2q7Vm1s80nCFhJ9UdlLsd2j9oVvpQZqzNe9etIsg2mzaE2R017yXatDK58MRO631VwoSLHwhR00jDOsZh2Woyg0GYK6xMyigYujC7b53o1WQ4SBubzenE1p1dCDDIT/39g0PyQQ/LVsdY1hQ++x9y3tXnqyAfKGceFbgoA8pADlpi5HgUy1/rmSdjjpBMRLBNV8W79c/nlHizhIEwwwEDF1zbmCTVLRX2m1WkJcF1SJrUhb1fgwUpSgZEEYyDnxazTMK+27uHL3fO12AA+NSfzNRUJtFKIAGfy/76zs454XU0J++47+8mYXKAAAAA" alt="Jai Goldberg" width="104" height="104">
-  <div class="hero-kicker">AI &amp; Automation Solutions for Education</div>
+  <div class="hero-kicker">AI &amp; Automation Solutions</div>
   <h1 class="serif">Manual work, measurably removed.</h1>
-  <p>I find the repetitive work across your education operation, build the systems that remove it, and leave your team running them.</p>
+  <p>I find the repetitive work inside your operation, build the systems that remove it, and leave your team running them.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-dark hero-cta">Book an intro call</a>
     <a href="#framework" class="text-link">See my work</a>
   </div>
   <div class="hero-proof">
-    <span><span class="proof-num serif">20K+</span><span class="proof-label">learners supported</span></span>
-    <span><span class="proof-num serif">18,600</span><span class="proof-label">reports generated</span></span>
-    <span><span class="proof-num serif">40%</span><span class="proof-label">less course production time</span></span>
-    <span><span class="proof-num serif">100+</span><span class="proof-label">staff trained</span></span>
+    <span><span class="proof-num serif">30%</span><span class="proof-label">fewer support tickets</span></span>
+    <span><span class="proof-num serif">25 min</span><span class="proof-label">saved per person, per day</span></span>
+    <span><span class="proof-num serif">18,600</span><span class="proof-label">reports, 85% faster</span></span>
+    <span><span class="proof-num serif">10</span><span class="proof-label">projects across 5 industries</span></span>
   </div>
 </header>
 
@@ -414,12 +394,11 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <div class="framework-grid">
     <div>
       <div class="eyebrow">FRAMEWORK</div>
-      <h2 class="section-heading serif">The Education Operations Loop</h2>
-      <p class="framework-lede">Six functions every education organisation runs on. This is where AI delivers the most value.</p>
-      <!-- LOOP DIAGRAM: intentionally omitted. Preserve the placeholder exactly. Do not design or approximate the diagram in this pass. -->
+      <h2 class="section-heading serif">The Operations Loop</h2>
+      <p class="framework-lede">Five places work piles up in any operation. This is where AI pays back, and where it needs watching.</p>
       <svg id="loop-diagram" width="100%" viewBox="0 0 680 510" xmlns="http://www.w3.org/2000/svg" role="img">
-        <title>The Education Operations Loop</title>
-        <desc>Six functions arranged in a continuous loop: Create, Deliver, Assess, Operate, Enable, then Improve, which returns to Create.</desc>
+        <title>The Operations Loop</title>
+        <desc>Five problems arranged in a continuous loop: Intake, Production, Response, Data, then Oversight, which returns to Intake.</desc>
 
         <g id="loop-ring">
           <path d="M 169.3 250.2 A 170 170 0 1 0 509.3 250.2 A 170 170 0 1 0 169.3 250.2"
@@ -428,28 +407,26 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
         <g id="loop-nodes" fill="var(--bg)" stroke="var(--accent-border)" stroke-width="1">
           <circle cx="340" cy="80"  r="55"/>
-          <circle cx="487" cy="165" r="55"/>
-          <circle cx="487" cy="335" r="55"/>
-          <circle cx="340" cy="420" r="55"/>
-          <circle cx="193" cy="335" r="55"/>
-          <circle cx="193" cy="165" r="55"/>
+          <circle cx="502" cy="198" r="55"/>
+          <circle cx="440" cy="388" r="55"/>
+          <circle cx="240" cy="388" r="55"/>
+          <circle cx="178" cy="198" r="55"/>
         </g>
 
         <g id="loop-labels" font-family="'Newsreader', Georgia, serif" font-size="18" fill="var(--ink)" text-anchor="middle">
-          <text x="340" y="80"  dominant-baseline="central">Create</text>
-          <text x="487" y="165" dominant-baseline="central">Deliver</text>
-          <text x="487" y="335" dominant-baseline="central">Assess</text>
-          <text x="340" y="420" dominant-baseline="central">Operate</text>
-          <text x="193" y="335" dominant-baseline="central">Enable</text>
-          <text x="193" y="165" dominant-baseline="central">Improve</text>
+          <text x="340" y="80"  dominant-baseline="central">Intake</text>
+          <text x="502" y="198" dominant-baseline="central">Production</text>
+          <text x="440" y="388" dominant-baseline="central">Response</text>
+          <text x="240" y="388" dominant-baseline="central">Data</text>
+          <text x="178" y="198" dominant-baseline="central">Oversight</text>
         </g>
 
         <g id="loop-centre" font-family="'Newsreader', Georgia, serif" font-size="13" fill="var(--muted)" text-anchor="middle" letter-spacing="1.6">
-          <text x="340" y="240" dominant-baseline="central">EDUCATION</text>
-          <text x="340" y="261" dominant-baseline="central">OPERATIONS</text>
+          <text x="340" y="240" dominant-baseline="central">YOUR</text>
+          <text x="340" y="261" dominant-baseline="central">OPERATION</text>
         </g>
       </svg>
-      <p class="loop-attribution">I worked inside this loop before I automated any part of it. Years in instructional design, building courses and assessments across everything from nursing to engineering.</p>
+      <p class="loop-attribution">I did this work by hand before I automated any of it. Years producing material and assessments manually, which is where the engineering started.</p>
     </div>
     <div>
       <div class="eyebrow">How I work</div>
@@ -478,8 +455,8 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
         <li class="process-step">
           <div class="process-num serif">4</div>
           <div>
-            <h3 class="serif">Handover and ownership</h3>
-            <p>Documentation, monitoring, and your team trained to run it. You'll know what it costs to keep running before you commit.</p>
+            <h3 class="serif">Handover and training</h3>
+            <p>Documentation, monitoring, and your team trained to run it, both the tool itself and the AI fluency behind it. Around ten sessions delivered, 100+ people trained, and by their managers' account most are still using it daily. You'll know what it costs to keep running before you commit.</p>
           </div>
         </li>
       </ol>
@@ -487,24 +464,151 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   </div>
 </section>
 
+<section id="guardrails" class="content">
+  <div class="eyebrow">GUARDRAILS</div>
+  <h2 class="section-heading serif">Production systems fail in boring ways</h2>
+
+  <div class="guardrails-intro">
+    <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
+  </div>
+
+  <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost.</p>
+
+  <div class="guardrails-grid">
+    <div class="guard-item">
+      <h3 class="serif">What if it gets something wrong?</h3>
+      <p>Outputs are scored against defined checks before release. Below the threshold nothing ships, it goes to a person with the full context.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What if it breaks?</h3>
+      <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What about our data?</h3>
+      <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">Can we turn it off?</h3>
+      <p>Nothing runs that your team cannot stop, change or switch off.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What if you disappear?</h3>
+      <p>Everything is documented as it is built, because one person is a single point of failure and pretending otherwise helps nobody. Your team is trained on it, the monitoring is yours, and nothing depends on me being reachable.</p>
+    </div>
+    <div class="guard-item guard-item-wide">
+      <h3 class="serif">Can we explain it to an auditor?</h3>
+      <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
+    </div>
+  </div>
+
+  <div class="guard-eval">
+    <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
+    <div class="guard-item">
+      <h3 class="serif">How I know it works</h3>
+      <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What it did, why, and what it cost</h3>
+      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is tracked per run, so spend is a number you can see rather than a surprise at the end of the month.</p>
+    </div>
+  </div>
+
+  <p class="case-link guard-link"><a href="https://bastidian.vercel.app/#ai-risk" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
+
+  <div class="tech-strip">
+    <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
+    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · Ragas · LangSmith · RAG pipelines · vector databases</p>
+    <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
+    <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Google Workspace · Intercom · Zendesk · Vercel</p>
+  </div>
+</section>
+
+<!-- Reserved: named client quote. Drop a <blockquote> here with name, title, company, and the specific outcome. -->
 <section id="work" class="content">
   <div class="eyebrow">CASE STUDIES</div>
   <h2 class="section-heading serif">What this looks like in practice</h2>
 
-  <p class="section-note">Client systems aren't mine to publish. Anything shown here is rebuilt with synthetic data, open source, or my own products.</p>
+  <p class="section-note">Ten client projects across five industries, plus two of my own. Client systems aren't mine to publish, so anything shown here is rebuilt with synthetic data, open source, or my own products.</p>
 
   <div class="work-tabs" role="tablist">
-    <button type="button" class="work-tab" id="tab-create" role="tab" aria-selected="true" aria-controls="create">Create</button>
-    <button type="button" class="work-tab" id="tab-deliver" role="tab" aria-selected="false" aria-controls="deliver" tabindex="-1">Deliver</button>
-    <button type="button" class="work-tab" id="tab-assess" role="tab" aria-selected="false" aria-controls="assess" tabindex="-1">Assess</button>
-    <button type="button" class="work-tab" id="tab-operate" role="tab" aria-selected="false" aria-controls="operate" tabindex="-1">Operate</button>
-    <button type="button" class="work-tab" id="tab-enable" role="tab" aria-selected="false" aria-controls="enable" tabindex="-1">Enable</button>
-    <button type="button" class="work-tab" id="tab-improve" role="tab" aria-selected="false" aria-controls="improve" tabindex="-1">Improve</button>
+    <button type="button" class="work-tab" id="tab-intake" role="tab" aria-selected="true" aria-controls="intake">Intake</button>
+    <button type="button" class="work-tab" id="tab-production" role="tab" aria-selected="false" aria-controls="production" tabindex="-1">Production</button>
+    <button type="button" class="work-tab" id="tab-response" role="tab" aria-selected="false" aria-controls="response" tabindex="-1">Response</button>
+    <button type="button" class="work-tab" id="tab-data" role="tab" aria-selected="false" aria-controls="data" tabindex="-1">Data</button>
+    <button type="button" class="work-tab" id="tab-oversight" role="tab" aria-selected="false" aria-controls="oversight" tabindex="-1">Oversight</button>
   </div>
 
-  <div id="create" class="node-panel is-active" role="tabpanel" aria-labelledby="tab-create">
-    <h3 class="node-name serif">Create</h3>
-    <p class="node-def">Producing the material people learn from.</p>
+  <div id="intake" class="node-panel is-active" role="tabpanel" aria-labelledby="tab-intake">
+    <h3 class="node-name serif">Intake</h3>
+    <p class="node-def">Work arrives in a form nobody can use.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <div class="case-kicker">Logistics</div>
+        <h4 class="serif">Order Intake</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Orders arrived as forms and emails and were re-keyed by hand before manufacturing could touch them, on six and seven figure deals.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>An intake pipeline that cleans and structures each order into a sheet ready for QA, then passes it to manufacturing. The confidence threshold is set high, so what it passes is right and a person handles the rest.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>What the system passes is right over 99% of the time.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>The operations team, and the manufacturers downstream of them.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Discovery · Pipeline design · Confidence thresholds · Rescope</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Google Apps Script · LLM APIs · Google Sheets</dd>
+          </div>
+        </dl>
+        <p class="case-link">Two days in, the first version could not clear its own confidence threshold on handwritten orders. I took that back rather than ship something that saved nothing, and we rescoped to the flow that did pay back.</p>
+      </article>
+      <article class="card case-card">
+        <div class="case-kicker">Hospitality</div>
+        <h4 class="serif">Operations Automation</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Work arrived by email, phone and call transcript, and someone had to read all of it before anything could be assigned. Twenty people were each losing part of every day to sorting rather than doing.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>An intake layer that reads incoming work, classifies it and routes it to the right person and system. Ambiguous items get flagged rather than guessed at.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Roughly 25 minutes of admin removed per person, per day.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>A 20-person operations team.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Intake design · Classification · Routing logic · Monitoring</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Gmail API · n8n · LLM APIs · Monday.com · Linear</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="production" class="node-panel" role="tabpanel" aria-labelledby="tab-production">
+    <h3 class="node-name serif">Production</h3>
+    <p class="node-def">The same output, made by hand, every time.</p>
     <div class="panel-cards">
       <article class="card case-card">
         <div class="case-kicker">E-learning · iPrep</div>
@@ -520,7 +624,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
           <div class="case-field">
             <dt>Outcome</dt>
-            <dd>40% less course production time.</dd>
+            <dd>20% less course production time.</dd>
           </div>
           <div class="case-field">
             <dt>Used by</dt>
@@ -536,12 +640,46 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
         </dl>
       </article>
+      <article class="card case-card">
+        <div class="case-kicker">High school</div>
+        <h4 class="serif">Personalised Assessment Feedback Engine</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Every report was written by hand from the scores. Volume was capped by how fast people could write, and quality drifted between authors.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A pipeline that turns raw psychometric scores into narrative feedback, with a rubric checking every report before it ships. Anything that fails the rubric goes to a person rather than out the door.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>18,600 reports generated, 85% less production time per report.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Assessment takers, and the team producing their reports.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Pipeline architecture · Rubric design · QA automation</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Claude API · Google Workspace automation · Automated QA layer</dd>
+          </div>
+        </dl>
+        <a class="case-demo" href="images/demo-feedback-engine.png" target="_blank" rel="noopener">
+          <img src="images/demo-feedback-engine.png" alt="How one assessment item becomes different feedback for three different roles" loading="lazy" width="1600" height="808">
+          <span>See how it works &#8599;</span>
+        </a>
+      </article>
     </div>
   </div>
 
-  <div id="deliver" class="node-panel" role="tabpanel" aria-labelledby="tab-deliver">
-    <h3 class="node-name serif">Deliver</h3>
-    <p class="node-def">Getting learners through it, and answering them along the way.</p>
+  <div id="response" class="node-panel" role="tabpanel" aria-labelledby="tab-response">
+    <h3 class="node-name serif">Response</h3>
+    <p class="node-def">The same question, answered by a person, forever.</p>
     <div class="panel-cards">
       <article class="card case-card">
         <div class="case-kicker">E-learning</div>
@@ -572,11 +710,6 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
             <dd>OpenAI API · RAG pipeline · LMS integration</dd>
           </div>
         </dl>
-        <a class="case-demo" href="images/demo-va-architecture.png">
-          <img src="images/demo-va-architecture.png" alt="Three tiers of call containment, with global fallback rules applied at every node" loading="lazy" width="1600" height="1010">
-          <span>See the architecture &#8599;</span>
-        </a>
-        <p class="case-link"><a href="https://github.com/Jacing142/za-pizza-voice-ai-architecture#readme" target="_blank" rel="noopener">Public architecture and ROI model for the same intent-routing and escalation stack, designed for a restaurant chain &#8599;</a></p>
       </article>
       <article class="card case-card">
         <div class="case-kicker">Tourism</div>
@@ -612,46 +745,162 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <span>See the full flow &#8599;</span>
         </a>
       </article>
-    </div>
-  </div>
-
-  <div id="assess" class="node-panel" role="tabpanel" aria-labelledby="tab-assess">
-    <h3 class="node-name serif">Assess</h3>
-    <p class="node-def">Finding out what learners actually understood.</p>
-    <div class="panel-cards">
       <article class="card case-card">
-        <div class="case-kicker">In-person education</div>
-        <h4 class="serif">Personalised Assessment Feedback Engine</h4>
+        <div class="case-kicker">Reference architecture · Public</div>
+        <h4 class="serif">Voice Agent Containment Architecture</h4>
         <dl class="case-fields">
           <div class="case-field">
             <dt>Problem</dt>
-            <dd>Every report was written by hand from the scores. Volume was capped by how fast people could write, and quality drifted between authors.</dd>
+            <dd>Contact centres either escalate too early, which costs money, or contain too aggressively, which costs customers.</dd>
           </div>
           <div class="case-field">
             <dt>Solution</dt>
-            <dd>A pipeline that turns raw psychometric scores into narrative feedback, with a rubric checking every report before it ships. Anything that fails the rubric goes to a person rather than out the door.</dd>
+            <dd>An eleven-intent voice agent with three tiers of containment and global fallback rules applied at every node, plus an ROI model showing what each tier is worth.</dd>
           </div>
           <div class="case-field">
             <dt>Outcome</dt>
-            <dd>18,600 reports generated, 85% less production time per report.</dd>
+            <dd>Published in full. Architecture, intent design and the ROI model are open.</dd>
           </div>
           <div class="case-field">
             <dt>Used by</dt>
-            <dd>Assessment takers, and the team producing their reports.</dd>
+            <dd>Built as a public reference architecture, not for a client.</dd>
           </div>
           <div class="case-field">
             <dt>My role</dt>
-            <dd>Pipeline architecture · Rubric design · QA automation</dd>
+            <dd>Intent design · Containment architecture · ROI model</dd>
           </div>
           <div class="case-field">
             <dt>Tools</dt>
-            <dd>Claude API · Google Workspace automation · Automated QA layer</dd>
+            <dd>Vonage AI Studio · NLU intent design</dd>
           </div>
         </dl>
-        <a class="case-demo" href="images/demo-feedback-engine.png" target="_blank" rel="noopener">
-          <img src="images/demo-feedback-engine.png" alt="How one assessment item becomes different feedback for three different roles" loading="lazy" width="1600" height="808">
-          <span>See how it works &#8599;</span>
+        <a class="case-demo" href="images/demo-va-architecture.png">
+          <img src="images/demo-va-architecture.png" alt="Three tiers of call containment, with global fallback rules applied at every node" loading="lazy" width="1600" height="1010">
+          <span>See the architecture &#8599;</span>
         </a>
+        <p class="case-link"><a href="https://github.com/Jacing142/za-pizza-voice-ai-architecture#readme" target="_blank" rel="noopener">Public architecture and ROI model for the same intent-routing and escalation stack, designed for a restaurant chain &#8599;</a></p>
+      </article>
+    </div>
+  </div>
+
+  <div id="data" class="node-panel" role="tabpanel" aria-labelledby="tab-data">
+    <h3 class="node-name serif">Data</h3>
+    <p class="node-def">The answer is in there. Nobody can get it out.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <div class="case-kicker">D2C ecommerce · Astroyogi</div>
+        <h4 class="serif">Ad and Commerce Data in One Place</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Ad spend in Google, ad spend in Meta, orders in Shopify, plus shipping, payments and a SQL database. Every report assembled by hand.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A staged pipeline into one warehouse: ingestion, then transformation, then a natural-language layer so anyone in the company can ask a question rather than wait for an analyst.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Architecture specified and accepted, first stage built. Their team is building out the rest.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>A 150 to 200 person ecommerce company, not just its analysts.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Discovery · Architecture · Staging and ROI case · First-stage build</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>Fivetran · BigQuery · dbt · Google Sheets</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="card case-card">
+        <div class="case-kicker">Education · New Delhi</div>
+        <h4 class="serif">Student Opportunity Matching</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>A school held years of information on every student, and almost none of it reached the students it was about. Opportunities went to whoever was confident enough to ask.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A per-student profile built from the data the school already holds, matched against competitions, groups and speaking opportunities, so the recommendation reaches the student rather than waiting to be requested.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Designed, prototyped and presented. The school is continuing it internally.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Students, and the staff who would otherwise have to spot them one by one.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Discovery · System design · Prototype · Presentation</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="card case-card">
+        <div class="case-kicker">Education · Capability</div>
+        <h4 class="serif">Post-publish analytics</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>The gap</dt>
+            <dd>Most organisations publish a course and stop looking. The data that shows where learners give up, which explanations fail and which changes actually work is already being collected and rarely used.</dd>
+          </div>
+          <div class="case-field">
+            <dt>What I do</dt>
+            <dd>Behavioural analysis of xAPI and LMS events to locate drop-off and friction, then targeted changes to the material and the interventions around it, measured against the same data.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Measured in-house</dt>
+            <dd>Course completion raised from 16% to 42% on the lowest-performing courses, and post-assessment scores from 68% to 84%.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>xAPI · GA4 · LMS event data</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+
+  <div id="oversight" class="node-panel" role="tabpanel" aria-labelledby="tab-oversight">
+    <h3 class="node-name serif">Oversight</h3>
+    <p class="node-def">AI running with nothing watching it.</p>
+    <div class="panel-cards">
+      <article class="card case-card">
+        <div class="case-kicker">Consumer AI</div>
+        <h4 class="serif">AI Agents Reviewed and Fixed</h4>
+        <dl class="case-fields">
+          <div class="case-field">
+            <dt>Problem</dt>
+            <dd>Tens of thousands of conversations a day, customer-facing and internal, with no way to see what any of it was doing. Guardrails sat in the prompt, some agents had none at all, and customer data reached the model unmasked.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Solution</dt>
+            <dd>A written review with the failures ranked, then hands-on fixes alongside their team. System prompts and parameters rewritten, and brand voice, tone, guardrails and skills defined once at company level instead of rebuilt by every team.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Outcome</dt>
+            <dd>Language drift down from one conversation in five to under 1%.</dd>
+          </div>
+          <div class="case-field">
+            <dt>Used by</dt>
+            <dd>Their customers, and the internal teams running the agents.</dd>
+          </div>
+          <div class="case-field">
+            <dt>My role</dt>
+            <dd>Audit · Prompt and parameter design · Reusable guardrail assets</dd>
+          </div>
+          <div class="case-field">
+            <dt>Tools</dt>
+            <dd>LLM APIs · System prompt architecture · Logging</dd>
+          </div>
+        </dl>
       </article>
       <article class="card case-card">
         <div class="case-kicker">Regtech</div>
@@ -691,184 +940,6 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       </article>
     </div>
   </div>
-
-  <div id="operate" class="node-panel" role="tabpanel" aria-labelledby="tab-operate">
-    <h3 class="node-name serif">Operate</h3>
-    <p class="node-def">The administrative work that keeps everything else running.</p>
-    <div class="panel-cards">
-      <article class="card case-card">
-        <div class="case-kicker">Hospitality</div>
-        <h4 class="serif">Operations Automation</h4>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>Problem</dt>
-            <dd>Work arrived by email, phone and call transcript, and someone had to read all of it before anything could be assigned. Twenty people were each losing part of every day to sorting rather than doing.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Solution</dt>
-            <dd>An intake layer that reads incoming work, classifies it and routes it to the right person and system. Ambiguous items get flagged rather than guessed at.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Outcome</dt>
-            <dd>Roughly 25 minutes of admin removed per person, per day.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Used by</dt>
-            <dd>A 20-person operations team.</dd>
-          </div>
-          <div class="case-field">
-            <dt>My role</dt>
-            <dd>Intake design · Classification · Routing logic · Monitoring</dd>
-          </div>
-          <div class="case-field">
-            <dt>Tools</dt>
-            <dd>Gmail API · n8n · LLM APIs · Monday.com · Linear</dd>
-          </div>
-        </dl>
-      </article>
-    </div>
-  </div>
-
-  <div id="enable" class="node-panel" role="tabpanel" aria-labelledby="tab-enable">
-    <h3 class="node-name serif">Enable</h3>
-    <p class="node-def">Making sure staff can actually use the tools they are given.</p>
-    <div class="panel-cards">
-      <article class="card case-card">
-        <div class="case-kicker">Cross-industry</div>
-        <h4 class="serif">AI Workshops</h4>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>Problem</dt>
-            <dd>Teams get given AI tools and no real idea what to do with them. Adoption stalls after the first week because nothing connects to the work people actually have in front of them.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Solution</dt>
-            <dd>Hands-on sessions built around the team's real workflows, taking people from prompt basics to running their own automations. Whatever gets built during the session stays with them as a working tool.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Outcome</dt>
-            <dd>100+ people trained, 90% still using it daily.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Used by</dt>
-            <dd>Non-technical teams.</dd>
-          </div>
-          <div class="case-field">
-            <dt>My role</dt>
-            <dd>Curriculum design · Facilitation · Workflow build</dd>
-          </div>
-          <div class="case-field">
-            <dt>Tools</dt>
-            <dd>GPT · Claude · Google Workspace · Canva</dd>
-          </div>
-        </dl>
-      </article>
-    </div>
-  </div>
-
-  <div id="improve" class="node-panel" role="tabpanel" aria-labelledby="tab-improve">
-    <h3 class="node-name serif">Improve</h3>
-    <p class="node-def">Learning from what the data shows, and feeding it back into the material.</p>
-    <div class="panel-cards">
-      <article class="card case-card">
-        <div class="case-kicker">Education · Capability</div>
-        <h4 class="serif">Post-publish analytics</h4>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>The gap</dt>
-            <dd>Most organisations publish a course and stop looking. The data that shows where learners give up, which explanations fail and which changes actually work is already being collected and rarely used.</dd>
-          </div>
-          <div class="case-field">
-            <dt>What I do</dt>
-            <dd>Behavioural analysis of xAPI and LMS events to locate drop-off and friction, then targeted changes to the material and the interventions around it, measured against the same data.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Measured in-house</dt>
-            <dd>Course completion raised from 16% to 42% on the lowest-performing courses, and post-assessment scores from 68% to 84%.</dd>
-          </div>
-          <div class="case-field">
-            <dt>Tools</dt>
-            <dd>xAPI · GA4 · LMS event data</dd>
-          </div>
-        </dl>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="beyond" class="content">
-  <h2 class="beyond-subhead">The same problems outside education</h2>
-  <p class="beyond-lede">Different industries, same three problems: work arriving in a form nobody can use, data nobody can query, AI running with nothing watching it.</p>
-
-  <div class="beyond-list">
-    <div class="beyond-item">
-      <h3 class="serif">Ad and commerce data in one place<span class="beyond-tag">D2C ecommerce · Astroyogi</span></h3>
-      <p>Ad spend in Google, ad spend in Meta, orders in Shopify, shipping, payments, a SQL database. Every report assembled by hand. I specified the architecture and built the first stage, the Google and Meta merge; their team is building out the rest. The end is one chatbot anyone in the company can ask, not a report only an analyst can produce.</p>
-    </div>
-    <div class="beyond-item">
-      <h3 class="serif">Order intake<span class="beyond-tag">Logistics</span></h3>
-      <p>Orders came in as forms and emails and were re-keyed by hand before manufacturing could touch them, on six and seven figure deals. Now they arrive cleaned and structured in a sheet for QA. The confidence threshold is set high, so what it passes is right and a person handles the rest.</p>
-    </div>
-    <div class="beyond-item">
-      <h3 class="serif">AI agents reviewed and fixed<span class="beyond-tag">Consumer AI</span></h3>
-      <p>Tens of thousands of conversations a day, customer-facing and internal, and no way to see what any of it was doing. Guardrails sat in the prompt, some agents had none at all, customer data reached the model unmasked. One in five conversations started in the right language and switched mid-way. Under 1% now, and brand voice, tone, guardrails and skills defined once at company level instead of rebuilt by every team.</p>
-    </div>
-  </div>
-</section>
-
-<section id="guardrails" class="content">
-  <div class="eyebrow">GUARDRAILS</div>
-  <h2 class="section-heading serif">Production systems fail in boring ways</h2>
-
-  <div class="guardrails-intro">
-    <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
-  </div>
-
-  <div class="guardrails-grid">
-    <div class="guard-item">
-      <h3 class="serif">What if it gets something wrong?</h3>
-      <p>Outputs are scored against defined checks before release. Below the threshold nothing ships, it goes to a person with the full context.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What if it breaks?</h3>
-      <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What about our data?</h3>
-      <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">Can we turn it off?</h3>
-      <p>Nothing runs that your team cannot stop, change or switch off.</p>
-    </div>
-    <div class="guard-item guard-item-wide">
-      <h3 class="serif">Can we explain it to an auditor?</h3>
-      <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
-    </div>
-  </div>
-
-  <p class="guard-aside">Part of this list comes from seeing what happens without it. Reviewing another company's agents in production: guardrails in the system prompt, nothing logged, and no answer to what a conversation cost.</p>
-
-  <div class="guard-eval">
-    <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
-    <div class="guard-item">
-      <h3 class="serif">How I know it works</h3>
-      <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What it did, why, and what it cost</h3>
-      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is tracked per run, so spend is a number you can see rather than a surprise at the end of the month.</p>
-    </div>
-  </div>
-
-  <p class="case-link guard-link"><a href="https://bastidian.vercel.app/#ai-risk" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
-
-  <div class="tech-strip">
-    <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
-    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · Ragas · LangSmith · RAG pipelines · vector databases</p>
-    <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
-    <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Google Workspace · Intercom · Zendesk · Vercel</p>
-  </div>
 </section>
 
 <section id="about" class="content">
@@ -880,9 +951,17 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     </div>
     <div class="about-body">
       <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
-      <p>Teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and educators get more of the thing they were hired to do.</p>
-      <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC. Wherever I work, the goal is the same: measurably less manual work, and nothing broken along the way.</p>
+      <p>Teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and people get more of the thing they were hired to do.</p>
+      <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC.</p>
       <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used weekly by 100+ practitioners exploring LLM conversations safely on their own machine.</p>
+      <div class="tech-strip">
+        <div class="guard-subhead">BACKGROUND</div>
+        <p class="tech-line">
+          <span class="tech-cat">Now</span> — Independent since 2025, building AI and automation systems for clients across logistics, hospitality, ecommerce, tourism and education.<br>
+          <span class="tech-cat">Before</span> — Enterprise retail deployments at an indoor-positioning SaaS company, supporting 150+ store rollouts for clients including Walmart and Albertsons across four countries. Then instructional design through to AI implementation at a test-prep company serving 20,000+ learners, where I built their first production AI system. Cofounded a consumer analytics startup before that.<br>
+          <span class="tech-cat">Trained in</span> — Psychology and statistics, with a minor in entrepreneurship, at Reichman University. The engineering came later, by building.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -892,6 +971,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <div class="eyebrow">Contact</div>
     <h2 class="serif">Book an intro call</h2>
     <p>Fifteen minutes to work out which part of your operation to start with. No prep needed.</p>
+    <p>I work with a maximum of three clients at a time. A first engagement is usually one workflow, with fixed scope and cost agreed before anything gets built.</p>
     <p class="quiet-email">Prefer email? <a href="mailto:jai@teq.biz">Write to jai@teq.biz</a></p>
   </div>
 
