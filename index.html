@@ -333,8 +333,8 @@
   /* About */
   .about-top {
     display: grid;
-    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
-    gap: clamp(32px, 5vw, 56px);
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 4vw, 56px);
     align-items: start;
     margin-top: clamp(32px, 5vw, 44px);
   }
@@ -359,18 +359,18 @@
   .about-prose {
     display: grid; grid-template-columns: 1fr 1fr;
     column-gap: clamp(32px, 4vw, 56px);
-    margin-top: clamp(40px, 6vw, 56px);
+    margin-top: clamp(56px, 8vw, 88px);
   }
   .about-prose > p {
     margin: 0; font-size: 17px; line-height: 1.65;
     color: var(--ink-soft); text-wrap: pretty;
   }
-  .about-closing { grid-column: 1 / -1; margin-top: 28px; max-width: 68ch; }
+  .about-closing { grid-column: 1 / -1; margin-top: 36px; }
   .about-closing p {
     margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft);
   }
   .about-closing p.about-aside {
-    margin-top: 20px; font-size: 14.5px; color: var(--muted);
+    margin-top: 32px; font-size: 14.5px; color: var(--muted);
   }
   .about-closing a {
     font-weight: 600; border-bottom: 1.5px solid var(--accent-border); padding-bottom: 1px;
