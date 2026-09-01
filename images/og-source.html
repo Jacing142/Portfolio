@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jai Goldberg | Open Graph card source</title>
+<!--
+  Source for images/og.png. Render at exactly 1200x630, deviceScaleFactor 1, and
+  save the screenshot over images/og.png. Uses the same Newsreader webfont as index.html.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16150F;
+    --accent: #2E4B33;
+    --bg: #FCFBF8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: var(--bg);
+    font-family: 'Newsreader', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card { position: relative; width: 1200px; height: 630px; }
+  .kicker {
+    position: absolute; left: 88px; top: 113px;
+    font-size: 24.5px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .headline {
+    position: absolute; left: 88px; top: 177px;
+    margin: 0; width: 1040px;
+    font-size: 112.5px; font-weight: 400; line-height: 120px;
+    color: var(--ink);
+  }
+  .byline {
+    position: absolute; left: 88px; top: 499px;
+    font-size: 30.5px; font-weight: 400; color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">AI &amp; Automation Solutions</div>
+  <h1 class="headline">Manual work,<br>measurably removed.</h1>
+  <div class="byline">Jai Goldberg</div>
+</div>
+</body>
+</html>
