@@ -293,6 +293,24 @@
     margin: 32px 0 0; max-width: 70ch;
     font-size: 15px; line-height: 1.6; color: var(--muted);
   }
+  .guard-disclosure { margin-top: clamp(32px, 5vw, 40px); }
+  .guard-disclosure > summary {
+    display: flex; align-items: center; justify-content: center;
+    padding: 15px 20px; cursor: pointer; list-style: none;
+    border: 1px solid var(--card-border); border-radius: 999px;
+    background: var(--card-bg);
+    font-size: 14.5px; font-weight: 600; color: var(--ink);
+  }
+  .guard-disclosure > summary::-webkit-details-marker { display: none; }
+  .guard-disclosure > summary::marker { content: ""; }
+  .guard-disclosure > summary:hover { border-color: var(--card-border-hover); }
+  .guard-disclosure > summary:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 3px;
+  }
+  .guard-disclosure .label-less { display: none; }
+  .guard-disclosure[open] .label-more { display: none; }
+  .guard-disclosure[open] .label-less { display: inline; }
+  .guard-disclosure[open] > summary { margin-bottom: clamp(8px, 2vw, 16px); }
 
   .quiet-email { margin: 16px 0 0; }
   .contact-head p.quiet-email { font-size: 14px; font-weight: 400; letter-spacing: 0; }
@@ -313,20 +331,57 @@
   .process-step p { margin: 8px 0 0; max-width: 560px; font-size: 15px; line-height: 1.55; color: var(--muted); }
 
   /* About */
-  .about-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  .about-top {
+    display: grid;
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 56px);
+    align-items: start;
+    margin-top: clamp(32px, 5vw, 44px);
+  }
   .about-portrait {
-    margin-top: 44px; width: min(100%, 440px); height: auto;
+    width: 100%; height: auto;
     aspect-ratio: 3 / 2; object-fit: cover;
     border: 1px solid var(--card-border); border-radius: 6px;
   }
-  .about-body p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
-  .about-body > p { max-width: 68ch; }
-  .about-body p + p { margin-top: 18px; }
-  .about-body a {
+  .about-background { margin: 0; }
+  .about-background .bg-item {
+    border-top: 1px solid var(--hairline-soft); padding-top: 16px;
+  }
+  .about-background .bg-item + .bg-item { margin-top: 24px; }
+  .about-background dt {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .about-background dd {
+    margin: 7px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted);
+  }
+
+  .about-prose {
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: clamp(32px, 4vw, 56px);
+    margin-top: clamp(40px, 6vw, 56px);
+  }
+  .about-prose > p {
+    margin: 0; font-size: 17px; line-height: 1.65;
+    color: var(--ink-soft); text-wrap: pretty;
+  }
+  .about-closing { grid-column: 1 / -1; margin-top: 28px; max-width: 68ch; }
+  .about-closing p {
+    margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft);
+  }
+  .about-closing p.about-aside {
+    margin-top: 20px; font-size: 14.5px; color: var(--muted);
+  }
+  .about-closing a {
     font-weight: 600; border-bottom: 1.5px solid var(--accent-border); padding-bottom: 1px;
   }
-  .about-body a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  .about-body p.about-aside { margin-top: 28px; font-size: 14.5px; color: var(--muted); }
+  .about-closing a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  @media (max-width: 860px) {
+    .about-top { grid-template-columns: 1fr; }
+    .about-prose { grid-template-columns: 1fr; }
+    .about-prose > p + p { margin-top: 18px; }
+  }
 
   /* Contact */
   .contact-head { text-align: center; }
@@ -475,58 +530,64 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 
   <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, which is a weak default rather than a control, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost.</p>
 
-  <div class="guardrails-grid">
-    <div class="guard-item">
-      <h3 class="serif">What if it gets something wrong?</h3>
-      <p>Outputs are scored against defined checks before release. Below the threshold nothing ships, it goes to a person with the full context.</p>
+  <details class="guard-disclosure">
+    <summary>
+      <span class="label-more">See the full list, and how I know it works &#8595;</span>
+      <span class="label-less">Show less &#8593;</span>
+    </summary>
+    <div class="guardrails-grid">
+      <div class="guard-item">
+        <h3 class="serif">What if it gets something wrong?</h3>
+        <p>Outputs are scored against defined checks before release. Below the threshold nothing ships, it goes to a person with the full context.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What if it breaks?</h3>
+        <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What if someone tries to trick it?</h3>
+        <p>Anything the system reads from outside, an email, a document, an uploaded file, is treated as data rather than instructions. Content and commands stay separated, and a system that ingests untrusted input never holds permissions it does not need for that job.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What about our data?</h3>
+        <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What is it allowed to do?</h3>
+        <p>Every action a system can take is on a list, and the list is enforced in code rather than in the prompt. Read access is separated from write access. Anything irreversible, sending to a customer, changing a record, moving money, needs either a person or a rule that cannot be talked out of it.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">Can we turn it off?</h3>
+        <p>Nothing runs that your team cannot stop, change or switch off.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What if you disappear?</h3>
+        <p>Everything is documented as it is built, because one person is a single point of failure and pretending otherwise helps nobody. Your team is trained on it, the monitoring is yours, and nothing depends on me being reachable.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What happens when the model changes?</h3>
+        <p>Models get deprecated and updated whether you are ready or not. The test cases your system was accepted against are kept, so a swap is a decision with evidence behind it rather than a surprise in production.</p>
+      </div>
+      <div class="guard-item guard-item-wide">
+        <h3 class="serif">Can we explain it to an auditor?</h3>
+        <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
+      </div>
     </div>
-    <div class="guard-item">
-      <h3 class="serif">What if it breaks?</h3>
-      <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What if someone tries to trick it?</h3>
-      <p>Anything the system reads from outside, an email, a document, an uploaded file, is treated as data rather than instructions. Content and commands stay separated, and a system that ingests untrusted input never holds permissions it does not need for that job.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What about our data?</h3>
-      <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What is it allowed to do?</h3>
-      <p>Every action a system can take is on a list, and the list is enforced in code rather than in the prompt. Read access is separated from write access. Anything irreversible, sending to a customer, changing a record, moving money, needs either a person or a rule that cannot be talked out of it.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">Can we turn it off?</h3>
-      <p>Nothing runs that your team cannot stop, change or switch off.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What if you disappear?</h3>
-      <p>Everything is documented as it is built, because one person is a single point of failure and pretending otherwise helps nobody. Your team is trained on it, the monitoring is yours, and nothing depends on me being reachable.</p>
-    </div>
-    <div class="guard-item">
-      <h3 class="serif">What happens when the model changes?</h3>
-      <p>Models get deprecated and updated whether you are ready or not. The test cases your system was accepted against are kept, so a swap is a decision with evidence behind it rather than a surprise in production.</p>
-    </div>
-    <div class="guard-item guard-item-wide">
-      <h3 class="serif">Can we explain it to an auditor?</h3>
-      <p>Escalations carry the reasoning that triggered them, and outputs trace back to the criteria that produced them.</p>
-    </div>
-  </div>
 
-  <div class="guard-eval">
-    <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
-    <div class="guard-item">
-      <h3 class="serif">How I know it works</h3>
-      <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
+    <div class="guard-eval">
+      <div class="guard-subhead">BEFORE IT SHIPS, AND WHILE IT RUNS</div>
+      <div class="guard-item">
+        <h3 class="serif">How I know it works</h3>
+        <p>Systems are tested against real cases in a sandbox and must clear agreed quality thresholds before they go near production. A system nobody has measured isn't a system, it's a demo.</p>
+      </div>
+      <div class="guard-item">
+        <h3 class="serif">What it did, why, and what it cost</h3>
+        <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is capped per run and tracked against that cap, so spend is a number you set rather than a surprise at the end of the month.</p>
+      </div>
     </div>
-    <div class="guard-item">
-      <h3 class="serif">What it did, why, and what it cost</h3>
-      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is capped per run and tracked against that cap, so spend is a number you set rather than a surprise at the end of the month.</p>
-    </div>
-  </div>
 
-  <p class="case-link guard-link"><a href="https://bastidian.vercel.app/#ai-risk" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
+    <p class="case-link guard-link"><a href="https://bastidian.vercel.app/#ai-risk" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
+  </details>
 
   <div class="tech-strip">
     <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · RAG pipelines · vector databases · LangSmith · Ragas</p>
@@ -956,25 +1017,33 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
 </section>
 
 <section id="about" class="content">
-  <div class="about-grid">
-    <div>
-      <div class="eyebrow">ABOUT</div>
-      <h2 class="section-heading serif">Built around how people actually work</h2>
-      <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="440" height="293" loading="lazy">
-    </div>
-    <div class="about-body">
-      <p>Psychology and instructional design first, engineering second. I spent years producing material and assessments by hand, then automated the parts nobody should have been doing by hand. It's why I start with how a team works rather than what a tool can do.</p>
-      <p>The work worth removing is the repetitive kind: producing the same output by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and people get more of the thing they were hired to do.</p>
+  <div class="eyebrow">ABOUT</div>
+  <h2 class="section-heading serif">Built around how people actually work</h2>
+
+  <div class="about-top">
+    <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="440" height="293" loading="lazy">
+    <dl class="about-background">
+      <div class="bg-item">
+        <dt>Now</dt>
+        <dd>Independent since 2025, building AI and automation systems for clients across logistics, hospitality, ecommerce, tourism and education.</dd>
+      </div>
+      <div class="bg-item">
+        <dt>Before</dt>
+        <dd>Enterprise retail deployments at an indoor-positioning SaaS company, supporting 150+ store rollouts for clients including Walmart and Albertsons across four countries. Then instructional design through to AI implementation at a test-prep company serving 20,000+ learners, where I built their first production AI system. Cofounded a consumer analytics startup before that.</dd>
+      </div>
+      <div class="bg-item">
+        <dt>Trained in</dt>
+        <dd>Psychology and statistics, with a minor in entrepreneurship, at Reichman University. The engineering came later, by building.</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="about-prose">
+    <p>Psychology and instructional design first, engineering second. I spent years producing material and assessments by hand, then automated the parts nobody should have been doing by hand. It's why I start with how a team works rather than what a tool can do.</p>
+    <p>The work worth removing is the repetitive kind: producing the same output by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and people get more of the thing they were hired to do.</p>
+    <div class="about-closing">
       <p>I work remotely with clients across North America, Europe, the Middle East and Asia, and in person where it helps.</p>
       <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used weekly by 100+ practitioners exploring LLM conversations safely on their own machine.</p>
-      <div class="tech-strip">
-        <div class="guard-subhead">BACKGROUND</div>
-        <p class="tech-line">
-          <span class="tech-cat">Now</span> — Independent since 2025, building AI and automation systems for clients across logistics, hospitality, ecommerce, tourism and education.<br>
-          <span class="tech-cat">Before</span> — Enterprise retail deployments at an indoor-positioning SaaS company, supporting 150+ store rollouts for clients including Walmart and Albertsons across four countries. Then instructional design through to AI implementation at a test-prep company serving 20,000+ learners, where I built their first production AI system. Cofounded a consumer analytics startup before that.<br>
-          <span class="tech-cat">Trained in</span> — Psychology and statistics, with a minor in entrepreneurship, at Reichman University. The engineering came later, by building.
-        </p>
-      </div>
     </div>
   </div>
 </section>
