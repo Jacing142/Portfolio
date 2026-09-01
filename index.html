@@ -313,13 +313,14 @@
   .process-step p { margin: 8px 0 0; max-width: 560px; font-size: 15px; line-height: 1.55; color: var(--muted); }
 
   /* About */
-  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px; }
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
   .about-portrait {
     margin-top: 44px; width: min(100%, 440px); height: auto;
     aspect-ratio: 3 / 2; object-fit: cover;
     border: 1px solid var(--card-border); border-radius: 6px;
   }
   .about-body p { margin: 0; font-size: 17px; line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
+  .about-body > p { max-width: 68ch; }
   .about-body p + p { margin-top: 18px; }
   .about-body a {
     font-weight: 600; border-bottom: 1.5px solid var(--accent-border); padding-bottom: 1px;
@@ -386,7 +387,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <span><span class="proof-num serif">30%</span><span class="proof-label">fewer support tickets</span></span>
     <span><span class="proof-num serif">25 min</span><span class="proof-label">saved per person, per day</span></span>
     <span><span class="proof-num serif">18,600</span><span class="proof-label">reports, 85% faster</span></span>
-    <span><span class="proof-num serif">10</span><span class="proof-label">projects across 5 industries</span></span>
+    <span><span class="proof-num serif">99%+</span><span class="proof-label">accuracy on automated order intake</span></span>
   </div>
 </header>
 
@@ -395,7 +396,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <div>
       <div class="eyebrow">FRAMEWORK</div>
       <h2 class="section-heading serif">The Operations Loop</h2>
-      <p class="framework-lede">Five places work piles up in any operation. This is where AI pays back, and where it needs watching.</p>
+      <p class="framework-lede">Five problems that show up in every operation I have worked in. Four are work that should not be done by hand. The fifth is what happens when nobody checks the other four.</p>
       <svg id="loop-diagram" width="100%" viewBox="0 0 680 510" xmlns="http://www.w3.org/2000/svg" role="img">
         <title>The Operations Loop</title>
         <desc>Five problems arranged in a continuous loop: Intake, Production, Response, Data, then Oversight, which returns to Intake.</desc>
@@ -426,7 +427,6 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <text x="340" y="261" dominant-baseline="central">OPERATION</text>
         </g>
       </svg>
-      <p class="loop-attribution">I did this work by hand before I automated any of it. Years producing material and assessments manually, which is where the engineering started.</p>
     </div>
     <div>
       <div class="eyebrow">How I work</div>
@@ -456,10 +456,11 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           <div class="process-num serif">4</div>
           <div>
             <h3 class="serif">Handover and training</h3>
-            <p>Documentation, monitoring, and your team trained to run it, both the tool itself and the AI fluency behind it. Around ten sessions delivered, 100+ people trained, and by their managers' account most are still using it daily. You'll know what it costs to keep running before you commit.</p>
+            <p>Documentation, monitoring, and your team trained to run it. You'll know what it costs to keep running before you commit.</p>
           </div>
         </li>
       </ol>
+      <p class="loop-attribution">Separately from build work, I run AI fluency workshops for teams. Around ten delivered so far, 100+ people trained.</p>
     </div>
   </div>
 </section>
@@ -472,7 +473,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <p>Someone uploads the wrong file. An API times out. An edge case appears on day one. I design for those paths as carefully as the happy one.</p>
   </div>
 
-  <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost.</p>
+  <p class="guard-aside">This list is not theoretical. Reviewing another company's agents in production, I found guardrails living only in the system prompt, which is a weak default rather than a control, some agents with no prompt at all, customer data reaching the model unmasked, and nothing logged, so nobody could say what any of it had cost.</p>
 
   <div class="guardrails-grid">
     <div class="guard-item">
@@ -484,8 +485,16 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <p>Validation at intake, retries and fallbacks. Failed runs are surfaced, never swallowed.</p>
     </div>
     <div class="guard-item">
+      <h3 class="serif">What if someone tries to trick it?</h3>
+      <p>Anything the system reads from outside, an email, a document, an uploaded file, is treated as data rather than instructions. Content and commands stay separated, and a system that ingests untrusted input never holds permissions it does not need for that job.</p>
+    </div>
+    <div class="guard-item">
       <h3 class="serif">What about our data?</h3>
       <p>Sensitive information is filtered before it reaches a model. Least-privilege access, and nothing leaves your systems.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What is it allowed to do?</h3>
+      <p>Every action a system can take is on a list, and the list is enforced in code rather than in the prompt. Read access is separated from write access. Anything irreversible, sending to a customer, changing a record, moving money, needs either a person or a rule that cannot be talked out of it.</p>
     </div>
     <div class="guard-item">
       <h3 class="serif">Can we turn it off?</h3>
@@ -494,6 +503,10 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     <div class="guard-item">
       <h3 class="serif">What if you disappear?</h3>
       <p>Everything is documented as it is built, because one person is a single point of failure and pretending otherwise helps nobody. Your team is trained on it, the monitoring is yours, and nothing depends on me being reachable.</p>
+    </div>
+    <div class="guard-item">
+      <h3 class="serif">What happens when the model changes?</h3>
+      <p>Models get deprecated and updated whether you are ready or not. The test cases your system was accepted against are kept, so a swap is a decision with evidence behind it rather than a surprise in production.</p>
     </div>
     <div class="guard-item guard-item-wide">
       <h3 class="serif">Can we explain it to an auditor?</h3>
@@ -509,17 +522,17 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
     </div>
     <div class="guard-item">
       <h3 class="serif">What it did, why, and what it cost</h3>
-      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is tracked per run, so spend is a number you can see rather than a surprise at the end of the month.</p>
+      <p>Every run is logged: what came in, what the system did with it, where it stopped. When something goes wrong you can see which step failed rather than reconstructing it from the output. Cost is capped per run and tracked against that cap, so spend is a number you set rather than a surprise at the end of the month.</p>
     </div>
   </div>
 
   <p class="case-link guard-link"><a href="https://bastidian.vercel.app/#ai-risk" target="_blank" rel="noopener">See these guardrails in practice: rubric scoring, three independent evaluator passes with a tiebreaker, and QA review before delivery &#8599;</a></p>
 
   <div class="tech-strip">
-    <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Zapier · Google Apps Script · Python · FastAPI · REST APIs · webhooks</p>
-    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · Ragas · LangSmith · RAG pipelines · vector databases</p>
-    <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
-    <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Google Workspace · Intercom · Zendesk · Vercel</p>
+    <p class="tech-line"><span class="tech-cat">AI systems</span> · Claude · GPT · Gemini · LangChain · LangGraph · RAG pipelines · vector databases · LangSmith · Ragas</p>
+    <p class="tech-line"><span class="tech-cat">Automation and integration</span> · n8n · Python · JavaScript · Google Apps Script · REST APIs · webhooks · Zapier · FastAPI</p>
+    <p class="tech-line"><span class="tech-cat">Data and deployment</span> · Postgres · Supabase · Vercel · Google Workspace · Zendesk · Intercom</p>
+    <p class="tech-line"><span class="tech-cat">Content and LMS</span> · ElevenLabs · Canva · Gamma · Synthesia · HeyGen · NotebookLM · Articulate 360 · LearnDash · Moodle</p>
   </div>
 </section>
 
@@ -528,7 +541,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
   <div class="eyebrow">CASE STUDIES</div>
   <h2 class="section-heading serif">What this looks like in practice</h2>
 
-  <p class="section-note">Ten client projects across five industries, plus two of my own. Client systems aren't mine to publish, so anything shown here is rebuilt with synthetic data, open source, or my own products.</p>
+  <p class="section-note">Work across logistics, hospitality, ecommerce, tourism and education. Client systems aren't mine to publish, so anything shown here is rebuilt with synthetic data, open source, or my own products.</p>
 
   <div class="work-tabs" role="tablist">
     <button type="button" class="work-tab" id="tab-intake" role="tab" aria-selected="true" aria-controls="intake">Intake</button>
@@ -636,7 +649,7 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
           </div>
           <div class="case-field">
             <dt>Tools</dt>
-            <dd>Google Apps Script · LLM APIs · n8n</dd>
+            <dd>Google Apps Script · LLM APIs · Gamma · n8n</dd>
           </div>
         </dl>
       </article>
@@ -950,9 +963,9 @@ mixpanel.init("a8c839212aaff5e2f8badecd9ef044ed", { track_pageview: true });
       <img class="about-portrait" src="images/jai-presenting.jpg" alt="Jai Goldberg presenting to a seated audience" width="440" height="293" loading="lazy">
     </div>
     <div class="about-body">
-      <p>Psychology and instructional design first, engineering second. I spent years building courses and assessments, usually in subjects I had to learn myself, then led the team that produced them. The engineering started there too: I automated the parts of that work nobody should have been doing by hand, and never stopped. It's why I start with how a team works rather than what a tool can do.</p>
-      <p>Teaching isn't the part worth automating. It's also the part people are right to protect. The work worth removing is the other kind: producing the same material by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and people get more of the thing they were hired to do.</p>
-      <p>I work remotely and in person with clients across North America, Europe, the Middle East and APAC.</p>
+      <p>Psychology and instructional design first, engineering second. I spent years producing material and assessments by hand, then automated the parts nobody should have been doing by hand. It's why I start with how a team works rather than what a tool can do.</p>
+      <p>The work worth removing is the repetitive kind: producing the same output by hand, answering the same question for the hundredth time, writing the report a system already has the data for. Take that away and people get more of the thing they were hired to do.</p>
+      <p>I work remotely with clients across North America, Europe, the Middle East and Asia, and in person where it helps.</p>
       <p class="about-aside">I also maintain <a href="https://gen-ai-conversation-searcher-merger.vercel.app/" target="_blank" rel="noopener">GenAI Conversation Explorer &#8599;</a>, an open-source tool used weekly by 100+ practitioners exploring LLM conversations safely on their own machine.</p>
       <div class="tech-strip">
         <div class="guard-subhead">BACKGROUND</div>
